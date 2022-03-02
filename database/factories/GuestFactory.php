@@ -17,7 +17,13 @@ class GuestFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nik' => $this->faker->nik(),
+            'name' => $this->faker->name(),
+            'address'=>$this->faker->address(),
+            'telephone'=> $this->faker->phoneNumber(),
+            'email'=>$this->faker->freeEmail(),
+            'job'=>$this->faker->jobTitle(),
+            'user_id'=> 1
         ];
     }
 }
