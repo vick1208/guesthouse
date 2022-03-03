@@ -74,7 +74,9 @@ class ReserveController extends Controller
      */
     public function edit($nik)
     {
-        //
+        return view('dashboard.reservation.edit',[
+            'id' => Guest::where('nik',$nik)->firstOrFail()
+        ]);
     }
 
     /**
@@ -86,7 +88,28 @@ class ReserveController extends Controller
      */
     public function update(Request $request, $nik)
     {
-        //
+        // @dd($request);
+
+        $rules=  [
+                "name" => 'required|max:255',
+                "address" => 'required',
+                "telephone" => 'required',
+                "job" => 'required',
+
+        ];
+        if ($request->nik != $nik) {
+            $rules['nik'] = 'required|unique:guests|max:16';
+        }
+        $old_guest = Guest::where('nik', $nik)->firstOrFail();
+        if ($request->email != $old_guest->email) {
+            $rules['email'] = 'required|unique:guests|email:dns';
+        }
+        $valid = $request->validate($rules);
+        $valid['user_id'] = auth()->user()->id;
+
+        Guest::where('nik',$nik)->update($valid);
+
+        return redirect('/dashboard/reserve')->with('success','Guest telah diubah.');
     }
 
     /**
