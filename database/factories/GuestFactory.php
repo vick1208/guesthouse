@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,13 +18,13 @@ class GuestFactory extends Factory
     public function definition()
     {
         return [
-            'nik' => $this->faker->nik(),
+            'nik' => $this->faker->unique()->nik(),
             'name' => $this->faker->name(),
             'address'=>$this->faker->address(),
             'telephone'=> $this->faker->phoneNumber(),
-            'email'=>$this->faker->freeEmail(),
+            'email'=>$this->faker->unique()->freeEmail(),
             'job'=>$this->faker->jobTitle(),
-            'user_id'=> 1
+            'user_id'=> mt_rand(1,3)
         ];
     }
 }

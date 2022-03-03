@@ -10,7 +10,7 @@
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard/reserve*')? 'active' : '' }}" href="/dashboard/reserve">
                     <span data-feather="book-open"></span>
-                    Reservation
+                    Guest Reservation
                 </a>
             </li>
         </ul>

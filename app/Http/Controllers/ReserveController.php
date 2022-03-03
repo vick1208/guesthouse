@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Guest;
 use Illuminate\Http\Request;
 
 class ReserveController extends Controller
@@ -13,7 +14,9 @@ class ReserveController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.reservation.index',[
+            'guests'=> Guest::where('user_id', auth()->user()->id)->get()
+        ]);
     }
 
     /**
@@ -23,7 +26,7 @@ class ReserveController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.reservation.create');
     }
 
     /**
@@ -34,7 +37,20 @@ class ReserveController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $valid = $request->validate(
+            [
+                "nik" => 'required|unique:guests|max:16',
+                "name" => 'required|max:255',
+                "address" => 'required',
+                "telephone" => 'required',
+                "email" => 'required|unique:guests|email:dns',
+                "job" => 'required'
+            ]
+        );
+        $valid['user_id'] = auth()->user()->id;
+
+        Guest::create($valid);
+        return redirect('/dashboard/reserve')->with('success','Data Guest ditambahkan.');
     }
 
     /**
@@ -43,9 +59,11 @@ class ReserveController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($nik)
     {
-        //
+        return view('dashboard.reservation.show',[
+            'id' => Guest::where('nik',$nik)->firstOrFail()
+        ]);
     }
 
     /**
@@ -54,7 +72,7 @@ class ReserveController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($nik)
     {
         //
     }
@@ -66,7 +84,7 @@ class ReserveController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $nik)
     {
         //
     }
@@ -77,8 +95,12 @@ class ReserveController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($nik)
     {
-        //
+        $delete = Guest::where('nik',$nik)->get();
+        Guest::destroy($delete);
+
+        return redirect('/dashboard/reserve')->with('success','Guest telah dihapus.');
+
     }
 }

@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('nik')->unique();
             $table->string('name');
-            $table->string('address')->nullable();
-            $table->string('telephone')->nullable();
-            $table->string('email')->nullable();
-            $table->string('job')->nullable();
+            $table->string('address');
+            $table->string('telephone');
+            $table->string('email');
+            $table->string('job');
             $table->foreignId('user_id');
             $table->timestamps();
         });
