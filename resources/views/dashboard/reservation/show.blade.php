@@ -6,8 +6,7 @@
         <div class="col-lg-8">
 
 
-            <a href="/dashboard/reserve" class="btn btn-success"><span data-feather="arrow-left"></span>Back to all my
-                posts</a>
+            <a href="/dashboard/reserve" class="btn btn-success"><span data-feather="arrow-left"></span>Guests Data</a>
             <a href="/dashboard/reserve/{{ $id->nik }}/edit" class="btn btn-warning"><span data-feather="edit"></span>Edit</a>
 
             <form action="/dashboard/reserve/{{ $id->nik }}" method="POST" class="d-inline">
