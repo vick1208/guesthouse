@@ -11,7 +11,7 @@
                 {{ session('success') }}
             </div>
         @endif
-        <a href="/dashboard/reserve/create" class="btn btn-primary mb-3">Create new reservation</a>
+        <a href="/dashboard/guest/create" class="btn btn-primary mb-3">Create new reservation</a>
         <table class="table table-striped table-sm">
             <thead>
                 <tr>
@@ -32,11 +32,11 @@
                         <td>{{ $guest->email }}</td>
                         <td>{{ $guest->job }}</td>
                         <td>
-                            <a href="/dashboard/guest/{{ $guest->nik }}" class="badge bg-info"><span
+                            <a href="/dashboard/guest/{{ $guest->id }}" class="badge bg-info"><span
                                     data-feather="eye"></span></a>
-                            <a href="/dashboard/guest/{{ $guest->nik }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a>
+                            <a href="/dashboard/guest/{{ $guest->id }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a>
 
-                            <form action="/dashboard/guest/{{ $guest->nik }}" method="POST" class="d-inline">
+                            <form action="/dashboard/guest/{{ $guest->id }}" method="POST" class="d-inline">
                                 @method('delete')
                                 @csrf
                                 <button class="badge bg-danger border-0"

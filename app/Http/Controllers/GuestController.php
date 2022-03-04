@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Guest;
 use Illuminate\Http\Request;
 
-class GuesController extends Controller
+class GuestController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -37,6 +37,7 @@ class GuesController extends Controller
      */
     public function store(Request $request)
     {
+        // @dd($request);
         $valid = $request->validate(
             [
                 "nik" => 'required|unique:guests|max:16',
@@ -75,7 +76,7 @@ class GuesController extends Controller
     public function edit(Guest $guest)
     {
         return view('dashboard.guest.edit',[
-            'id' => $guest
+            'guest' => $guest
         ]);
     }
 

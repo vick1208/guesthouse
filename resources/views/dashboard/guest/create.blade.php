@@ -6,7 +6,7 @@
     </div>
 
     <div class="col-lg-8">
-        <form action="/dashboard/reserve" method="post" class="mb-5">
+        <form action="/dashboard/guest" method="post" class="mb-5">
             @csrf
             <div class="mb-3">
                 <label for="nik" class="form-label">NIK</label>
