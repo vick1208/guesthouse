@@ -35,7 +35,6 @@ Route::get('dashboard',function(){
 Route::resource('dashboard/guest',GuestController::class)->middleware('auth');
 
 
-
 Route::group(['middleware'=>'guest'],function(){
     Route::get('login',[LoginController::class,'index'])->name('login');
     Route::get('/register', [RegisterController::class, 'index']);
