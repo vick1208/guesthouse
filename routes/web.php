@@ -23,7 +23,7 @@ Route::get('/', function () {
     ]);
 });
 
-Route::group();
+
 
 
 Route::get('login',[LoginController::class,'index'])->middleware('guest')->name('login');
