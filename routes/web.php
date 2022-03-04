@@ -4,7 +4,7 @@ use App\Http\Controllers\GuestController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
-
+use GuzzleHttp\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,14 +23,8 @@ Route::get('/', function () {
     ]);
 });
 
-
-
-
-Route::get('login',[LoginController::class,'index'])->middleware('guest')->name('login');
 Route::post('login',[LoginController::class,'auth']);
 Route::post('/logout',[LoginController::class,'logout']);
-
-Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register',[RegisterController::class, 'store']);
 
 Route::get('dashboard',function(){
@@ -39,3 +33,10 @@ Route::get('dashboard',function(){
 
 
 Route::resource('dashboard/guest',GuestController::class)->middleware('auth');
+
+
+
+Route::group(['middleware'=>'guest'],function(){
+    Route::get('login',[LoginController::class,'index'])->name('login');
+    Route::get('/register', [RegisterController::class, 'index']);
+});
