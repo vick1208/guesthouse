@@ -2,7 +2,7 @@
 
 @section('container')
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Guest Reservation</h1>
+        <h1 class="h2">Guest List</h1>
     </div>
 
     <div class="table-responsive col-lg-19">
@@ -32,11 +32,11 @@
                         <td>{{ $guest->email }}</td>
                         <td>{{ $guest->job }}</td>
                         <td>
-                            <a href="/dashboard/reserve/{{ $guest->nik }}" class="badge bg-info"><span
+                            <a href="/dashboard/guest/{{ $guest->nik }}" class="badge bg-info"><span
                                     data-feather="eye"></span></a>
-                            <a href="/dashboard/reserve/{{ $guest->nik }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a>
+                            <a href="/dashboard/guest/{{ $guest->nik }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a>
 
-                            <form action="/dashboard/reserve/{{ $guest->nik }}" method="POST" class="d-inline">
+                            <form action="/dashboard/guest/{{ $guest->nik }}" method="POST" class="d-inline">
                                 @method('delete')
                                 @csrf
                                 <button class="badge bg-danger border-0"
