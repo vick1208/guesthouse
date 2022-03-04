@@ -8,9 +8,9 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('dashboard/reserve*')? 'active' : '' }}" href="/dashboard/reserve">
+                <a class="nav-link {{ Request::is('dashboard/guest*')? 'active' : '' }}" href="/dashboard/reserve">
                     <span data-feather="book-open"></span>
-                    Guest Reservation
+                    Guest List
                 </a>
             </li>
         </ul>

@@ -34,4 +34,4 @@ Route::get('dashboard',function(){
 })->middleware('auth');
 
 
-Route::resource('dashboard/reserve',ReserveController::class)->middleware('auth');
+Route::resource('dashboard/guest',ReserveController::class)->middleware('auth');
