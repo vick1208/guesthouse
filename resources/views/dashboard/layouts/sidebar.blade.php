@@ -8,7 +8,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('dashboard/guest*')? 'active' : '' }}" href="/dashboard/reserve">
+                <a class="nav-link {{ Request::is('dashboard/guest*')? 'active' : '' }}" href="/dashboard/guest">
                     <span data-feather="book-open"></span>
                     Guest List
                 </a>
