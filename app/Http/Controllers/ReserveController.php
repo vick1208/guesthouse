@@ -67,7 +67,7 @@ class ReserveController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $nik)
+    public function update(Request $request, $id)
     {
        //
     }
@@ -78,7 +78,7 @@ class ReserveController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($nik)
+    public function destroy($id)
     {
         //
     }
