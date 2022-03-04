@@ -1,9 +1,10 @@
 <?php
 
+use App\Http\Controllers\GuestController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\ReserveController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -34,4 +35,4 @@ Route::get('dashboard',function(){
 })->middleware('auth');
 
 
-Route::resource('dashboard/guest',ReserveController::class)->middleware('auth');
+Route::resource('dashboard/guest',GuestController::class)->middleware('auth');
