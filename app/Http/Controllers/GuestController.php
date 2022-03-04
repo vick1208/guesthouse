@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Guest;
 use Illuminate\Http\Request;
 
-class GuestController extends Controller
+class GuesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -56,26 +56,26 @@ class GuestController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Guest  $guest
      * @return \Illuminate\Http\Response
      */
-    public function show($nik)
+    public function show(Guest $guest)
     {
         return view('dashboard.guest.show',[
-            'id' => Guest::where('nik',$nik)->firstOrFail()
+            'guest' => $guest
         ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Guest  $guest
      * @return \Illuminate\Http\Response
      */
-    public function edit($nik)
+    public function edit(Guest $guest)
     {
         return view('dashboard.guest.edit',[
-            'id' => Guest::where('nik',$nik)->firstOrFail()
+            'id' => $guest
         ]);
     }
 
@@ -83,10 +83,10 @@ class GuestController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Guest  $guest
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $nik)
+    public function update(Request $request, Guest $guest)
     {
         $rules=  [
             "name" => 'required|max:255',
@@ -95,17 +95,17 @@ class GuestController extends Controller
             "job" => 'required',
 
     ];
-    if ($request->nik != $nik) {
+    if ($request->nik != $guest->nik) {
         $rules['nik'] = 'required|unique:guests|max:16';
     }
-    $old_guest = Guest::where('nik', $nik)->firstOrFail();
-    if ($request->email != $old_guest->email) {
+
+    if ($request->email != $guest->email) {
         $rules['email'] = 'required|unique:guests|email:dns';
     }
     $valid = $request->validate($rules);
     $valid['user_id'] = auth()->user()->id;
 
-    Guest::where('nik',$nik)->update($valid);
+    Guest::where('id',$guest->id)->update($valid);
 
     return redirect('/dashboard/guest')->with('success','Guest telah diubah.');
     }
@@ -113,14 +113,12 @@ class GuestController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Guest  $guest
      * @return \Illuminate\Http\Response
      */
-    public function destroy($nik)
+    public function destroy(Guest $guest)
     {
-        $delete = Guest::where('nik',$nik)->get();
-        Guest::destroy($delete);
-
+        Guest::destroy($guest->id);
         return redirect('/dashboard/guest')->with('success','Guest telah dihapus.');
     }
 }

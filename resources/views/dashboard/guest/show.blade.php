@@ -7,9 +7,9 @@
 
 
             <a href="/dashboard/guest" class="btn btn-success"><span data-feather="arrow-left"></span>Guests Data</a>
-            <a href="/dashboard/guest/{{ $id->nik }}/edit" class="btn btn-warning"><span data-feather="edit"></span>Edit</a>
+            <a href="/dashboard/guest/{{ $guest->nik }}/edit" class="btn btn-warning"><span data-feather="edit"></span>Edit</a>
 
-            <form action="/dashboard/guest/{{ $id->nik }}" method="POST" class="d-inline">
+            <form action="/dashboard/guest/{{ $guest->nik }}" method="POST" class="d-inline">
                 @method('delete')
                 @csrf
                 <button class="btn btn-danger " onclick="return confirm('Apakah Anda Ingin Menghapus?')"><span
@@ -17,7 +17,7 @@
             </form>
 
 
-            <h1>Nama : {{ $id->name }}</h1>
+            <h1>Nama : {{ $guest->name }}</h1>
 
 
 

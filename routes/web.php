@@ -23,6 +23,9 @@ Route::get('/', function () {
     ]);
 });
 
+Route::group();
+
+
 Route::get('login',[LoginController::class,'index'])->middleware('guest')->name('login');
 Route::post('login',[LoginController::class,'auth']);
 Route::post('/logout',[LoginController::class,'logout']);

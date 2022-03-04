@@ -9,8 +9,14 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard/guest*')? 'active' : '' }}" href="/dashboard/guest">
-                    <span data-feather="book-open"></span>
+                    <span data-feather="book"></span>
                     Guest List
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('dashboard/reserve*')? 'active' : '' }}" href="/dashboard/reserve">
+                    <span data-feather="book"></span>
+                    Reservation List
                 </a>
             </li>
         </ul>
