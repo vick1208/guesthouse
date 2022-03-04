@@ -4,6 +4,7 @@ use App\Http\Controllers\GuestController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ReservationController;
 use GuzzleHttp\Middleware;
 
 /*
@@ -33,7 +34,7 @@ Route::get('dashboard',function(){
 
 
 Route::resource('dashboard/guest',GuestController::class)->middleware('auth');
-
+Route::resource('dashboard/reserve',ReservationController::class)->middleware('auth');
 
 Route::group(['middleware'=>'guest'],function(){
     Route::get('login',[LoginController::class,'index'])->name('login');
