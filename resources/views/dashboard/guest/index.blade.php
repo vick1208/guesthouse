@@ -11,7 +11,7 @@
                 {{ session('success') }}
             </div>
         @endif
-        <a href="/dashboard/guest/create" class="btn btn-primary mb-3">Create new reservation</a>
+        <a href="/dashboard/guest/create" class="btn btn-primary mb-3">Create new Guest</a>
         <table class="table table-striped table-sm">
             <thead>
                 <tr>
