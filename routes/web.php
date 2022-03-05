@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\RoomController;
 use GuzzleHttp\Middleware;
 
 /*
@@ -28,15 +29,24 @@ Route::post('login',[LoginController::class,'auth']);
 Route::post('/logout',[LoginController::class,'logout']);
 Route::post('/register',[RegisterController::class, 'store']);
 
-Route::get('dashboard',function(){
-    return view('dashboard.index');
-})->middleware('auth');
+// Route::get('dashboard',function(){
+//     return view('dashboard.index');
+// })->middleware('auth');
 
 
-Route::resource('dashboard/guest',GuestController::class)->middleware('auth');
-Route::resource('dashboard/reserve',ReservationController::class)->middleware('auth');
+// Route::resource('dashboard/guest',GuestController::class)->middleware('auth');
+// Route::resource('dashboard/reserve',ReservationController::class)->middleware('auth');
 
 Route::group(['middleware'=>'guest'],function(){
     Route::get('login',[LoginController::class,'index'])->name('login');
     Route::get('/register', [RegisterController::class, 'index']);
+});
+
+Route::group(['middleware'=>'auth'],function(){
+    Route::get('dashboard',function(){
+        return view('dashboard.index');
+    });
+    Route::resource('dashboard/guest',GuestController::class);
+    Route::resource('dashboard/room',RoomController::class);
+    Route::resource('dashboard/reserve',ReservationController::class);
 });
