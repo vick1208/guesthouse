@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Guest;
 use App\Models\Reservation;
+use App\Models\Room;
 use Illuminate\Http\Request;
 
 class ReservationController extends Controller
@@ -15,6 +17,9 @@ class ReservationController extends Controller
     public function index()
     {
         return view('dashboard.reservation.index',[
+            'user' => Guest::where('user_id', auth()->user()->id)->get(),
+            'guest' => Guest::with('user')->get(),
+            'room'=> Room::with(['type','roomstatus'])->get()
 
         ]);
     }
