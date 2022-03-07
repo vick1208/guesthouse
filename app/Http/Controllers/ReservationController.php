@@ -17,9 +17,9 @@ class ReservationController extends Controller
     public function index()
     {
         return view('dashboard.reservation.index',[
-            'user' => Guest::where('user_id', auth()->user()->id)->get(),
-            'guest' => Guest::with('user')->get(),
-            'room'=> Room::with(['type','roomstatus'])->get()
+
+            'guests' => Guest::with('user')->get(),
+            'rooms'=> Room::with(['type','roomstatus'])->get()
 
         ]);
     }

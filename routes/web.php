@@ -47,6 +47,6 @@ Route::group(['middleware'=>'auth'],function(){
         return view('dashboard.index');
     });
     Route::resource('dashboard/guest',GuestController::class);
-    Route::resource('dashboard/room',RoomController::class)->except('create');
+    Route::resource('dashboard/room',RoomController::class);
     Route::resource('dashboard/reserve',ReservationController::class);
 });
