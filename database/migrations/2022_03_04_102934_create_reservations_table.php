@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
             $table->foreignId('guest_id')->constrained();
             $table->foreignId('room_id')->constrained();
             $table->date('check_in');
