@@ -26,7 +26,7 @@
             <td>{{ $loop->iteration }}</td>
             <td>{{ $guest->name }}</td>
             {{-- @foreach ( $rooms as $room)
-            <td>{{ $room->number }}</td>
+            <td>{{ $room->number[10A] }}</td>
             @endforeach --}}
             <td>
                 <a href="/dashboard/reserve/{{ $guest->id }}" class="badge bg-info"><span
