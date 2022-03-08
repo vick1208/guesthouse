@@ -19,7 +19,7 @@ class ReservationController extends Controller
         return view('dashboard.reservation.index',[
 
             'guests' => Guest::with('user')->get(),
-            'rooms'=> Room::with(['type','roomstatus'])->get()
+            // 'rooms'=> Room::with(['type','roomstatus'])->get()
 
         ]);
     }
