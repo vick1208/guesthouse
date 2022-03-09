@@ -41,5 +41,14 @@ class UserFactory extends Factory
         });
     }
 
+    public function isGuest()
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'role' => 'Guest',
+            ];
+        });
+    }
+
 
 }

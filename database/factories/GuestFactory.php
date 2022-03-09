@@ -18,13 +18,12 @@ class GuestFactory extends Factory
     public function definition()
     {
         return [
-            'nik' => $this->faker->unique()->nik(),
-            'name' => $this->faker->name(),
-            'address'=>$this->faker->address(),
-            'telephone'=> $this->faker->phoneNumber(),
-            'email'=>$this->faker->unique()->freeEmail(),
-            'job'=>$this->faker->jobTitle(),
-            'user_id'=> mt_rand(1,3)
+            'name' => $this->faker->name,
+            'address' => $this->faker->address,
+            'gender' => $this->faker->randomElement(['Male', 'Female']),
+            'job' => $this->faker->jobTitle,
+            'birthdate' => $this->faker->date(),
+            'user_id' => User::factory()->isGuest()
         ];
     }
 }

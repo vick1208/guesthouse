@@ -21,7 +21,8 @@ class UserSeeder extends Seeder
             'name' => 'Superadmin',
             'username'=>'sadmin123',
             'email'=>'super@gmail.com',
-            'password'=>bcrypt('test1234')
+            'password'=>bcrypt('test1234'),
+            'role' => 'Super',
         ]);
     }
 }
