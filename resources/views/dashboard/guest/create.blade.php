@@ -9,7 +9,7 @@
         <form action="/dashboard/guest" method="post" class="mb-5">
             @csrf
             <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
+                <label for="name" class="form-label">Nama</label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
                     value="{{ old('name') }}">
 
@@ -20,7 +20,7 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label for="address" class="form-label">Address</label>
+                <label for="address" class="form-label">Alamat</label>
                 <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address"
                     value="{{ old('address') }}">
                 @error('address')
@@ -42,7 +42,7 @@
 
 
             <div class="mb-3">
-                <label for="gender" class="form-label">Gender</label>
+                <label for="gender" class="form-label">Jenis Kelamin</label>
                 <select class="form-select" name="gender">
                    @foreach ( $genders as $gender)
                     @if (old('gender')==$gender)
@@ -54,11 +54,22 @@
                 </select>
             </div>
 
-            <div class="mb-3">
+            {{-- <div class="mb-3">
                 <label for="email" class="form-label">E-mail</label>
                 <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email"
                     value="{{ old('email') }}">
                 @error('email')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div> --}}
+            <div class="mb-3">
+                <label for="birthdate" class="form-label">Tanggal Lahir</label>
+                <input type="date" class="form-control @error('birthdate')
+                is-invalid
+                @enderror" name="birthdate" id="birthdate" value="{{ old('birthdate') }}">
+                @error('birthdate')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>

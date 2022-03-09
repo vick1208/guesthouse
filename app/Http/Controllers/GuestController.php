@@ -42,11 +42,10 @@ class GuestController extends Controller
         // @dd($request);
         $valid = $request->validate(
             [
-                "nik" => 'required|unique:guests|max:16',
                 "name" => 'required|max:255',
                 "address" => 'required',
-                "telephone" => 'required',
-                "email" => 'required|unique:guests|email:dns',
+                "gender" => 'required',
+                "birthdate" => 'required|date',
                 "job" => 'required'
             ]
         );
