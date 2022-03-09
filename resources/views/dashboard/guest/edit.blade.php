@@ -10,19 +10,7 @@
             @method('put')
             @csrf
             <div class="mb-3">
-                <label for="nik" class="form-label">NIK</label>
-                <input type="text" class="form-control @error('nik') is-invalid @enderror" id="nik" name="nik" autofocus
-                    value="{{ old('nik', $guest->nik) }}">
-
-                @error('nik')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-
-            <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
+                <label for="name" class="form-label">Nama</label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
                     value="{{ old('name',$guest->name) }}">
 
@@ -33,7 +21,7 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label for="address" class="form-label">Address</label>
+                <label for="address" class="form-label">Alamat</label>
                 <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address"
                     value="{{ old('address',$guest->address) }}">
                 @error('address')
@@ -43,17 +31,30 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label for="telephone" class="form-label">Telephone</label>
-                <input type="tel" class="form-control @error('telephone') is-invalid @enderror" id="telephone"
-                    name="telephone" value="{{ old('telephone',$guest->telephone) }}">
-                @error('telephone')
+                <label for="gender" class="form-label">Jenis Kelamin</label>
+                <select class="form-select" name="gender">
+                   @foreach ( $genders as $gender)
+                    @if (old('gender',$guest->gender)==$gender)
+                    <option value="{{ $gender }}" selected>{{ $gender }}</option>
+                    @else
+                    <option value="{{ $gender}}">{{ $gender }}</option>
+                    @endif
+                   @endforeach
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="birthdate" class="form-label">Tanggal Lahir</label>
+                <input type="date" class="form-control @error('birthdate')
+                is-invalid
+                @enderror" name="birthdate" id="birthdate" value="{{ old('birthdate',$guest->birthdate) }}">
+                @error('birthdate')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
                 @enderror
             </div>
 
-            <div class="mb-3">
+            {{-- <div class="mb-3">
                 <label for="email" class="form-label">E-mail</label>
                 <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email"
                     value="{{ old('email',$guest->email) }}">
@@ -62,7 +63,7 @@
                         {{ $message }}
                     </div>
                 @enderror
-            </div>
+            </div> --}}
             <div class="mb-3">
                 <label for="job" class="form-label">Job Title</label>
                 <input type="text" class="form-control @error('job') is-invalid @enderror" id="job" name="job"
@@ -73,7 +74,7 @@
                     </div>
                 @enderror
             </div>
-            <button type="submit" class="btn btn-warning">Update Reservation</button>
+            <button type="submit" class="btn btn-warning">Update Guest</button>
 
         </form>
     </div>

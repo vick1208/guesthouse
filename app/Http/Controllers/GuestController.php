@@ -14,8 +14,8 @@ class GuestController extends Controller
      */
     public function index()
     {
-        return view('dashboard.guest.index',[
-            'guests'=> Guest::where('user_id', auth()->user()->id)->get()
+        return view('dashboard.guest.index', [
+            'guests' => Guest::where('user_id', auth()->user()->id)->get()
         ]);
     }
 
@@ -26,8 +26,8 @@ class GuestController extends Controller
      */
     public function create()
     {
-        return view('dashboard.guest.create',[
-            'genders'=> ['Pria', 'Wanita']
+        return view('dashboard.guest.create', [
+            'genders' => ['Pria', 'Wanita']
         ]);
     }
 
@@ -52,7 +52,7 @@ class GuestController extends Controller
         $valid['user_id'] = auth()->user()->id;
 
         Guest::create($valid);
-        return redirect('/dashboard/guest')->with('success','Data Guest ditambahkan.');
+        return redirect('/dashboard/guest')->with('success', 'Data Guest ditambahkan.');
     }
 
     /**
@@ -63,7 +63,7 @@ class GuestController extends Controller
      */
     public function show(Guest $guest)
     {
-        return view('dashboard.guest.show',[
+        return view('dashboard.guest.show', [
             'guest' => $guest
         ]);
     }
@@ -76,8 +76,9 @@ class GuestController extends Controller
      */
     public function edit(Guest $guest)
     {
-        return view('dashboard.guest.edit',[
-            'guest' => $guest
+        return view('dashboard.guest.edit', [
+            'guest' => $guest,
+            'genders' => ['Pria', 'Wanita']
         ]);
     }
 
@@ -90,26 +91,23 @@ class GuestController extends Controller
      */
     public function update(Request $request, Guest $guest)
     {
-        $rules=  [
+
+        // @dd($request);
+
+        $rules =  [
             "name" => 'required|max:255',
             "address" => 'required',
-            "telephone" => 'required',
-            "job" => 'required',
+            "gender" => 'required',
+            "birthdate" => 'required|date',
+            "job" => 'required'
+        ];
 
-    ];
-    if ($request->nik != $guest->nik) {
-        $rules['nik'] = 'required|unique:guests|max:16';
-    }
+        $valid = $request->validate($rules);
+        $valid['user_id'] = auth()->user()->id;
 
-    if ($request->email != $guest->email) {
-        $rules['email'] = 'required|unique:guests|email:dns';
-    }
-    $valid = $request->validate($rules);
-    $valid['user_id'] = auth()->user()->id;
+        Guest::where('id', $guest->id)->update($valid);
 
-    Guest::where('id',$guest->id)->update($valid);
-
-    return redirect('/dashboard/guest')->with('success','Guest telah diubah.');
+        return redirect('/dashboard/guest')->with('success', 'Guest telah diubah.');
     }
 
     /**
@@ -121,6 +119,6 @@ class GuestController extends Controller
     public function destroy(Guest $guest)
     {
         Guest::destroy($guest->id);
-        return redirect('/dashboard/guest')->with('success','Guest telah dihapus.');
+        return redirect('/dashboard/guest')->with('success', 'Guest telah dihapus.');
     }
 }
