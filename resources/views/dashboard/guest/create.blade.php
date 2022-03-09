@@ -9,18 +9,6 @@
         <form action="/dashboard/guest" method="post" class="mb-5">
             @csrf
             <div class="mb-3">
-                <label for="nik" class="form-label">NIK</label>
-                <input type="text" class="form-control @error('nik') is-invalid @enderror" id="nik" name="nik" autofocus
-                    value="{{ old('nik') }}">
-
-                @error('nik')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-
-            <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
                     value="{{ old('name') }}">
@@ -41,7 +29,7 @@
                     </div>
                 @enderror
             </div>
-            <div class="mb-3">
+            {{-- <div class="mb-3">
                 <label for="telephone" class="form-label">Telephone</label>
                 <input type="tel" class="form-control @error('telephone') is-invalid @enderror" id="telephone"
                     name="telephone" value="{{ old('telephone') }}">
@@ -50,6 +38,20 @@
                         {{ $message }}
                     </div>
                 @enderror
+            </div> --}}
+
+
+            <div class="mb-3">
+                <label for="gender" class="form-label">Gender</label>
+                <select class="form-select" name="gender">
+                   @foreach ( $genders as $gender)
+                    @if (old('gender')==$gender)
+                    <option value="{{ $gender }}" selected>{{ $gender }}</option>
+                    @else
+                    <option value="{{ $gender}}">{{ $gender }}</option>
+                    @endif
+                   @endforeach
+                </select>
             </div>
 
             <div class="mb-3">

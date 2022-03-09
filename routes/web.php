@@ -42,7 +42,7 @@ Route::group(['middleware'=>'guest'],function(){
     Route::get('/register', [RegisterController::class, 'index']);
 });
 
-Route::group(['middleware'=>'auth'],function(){
+Route::group(['middleware'=>['auth','roleCheck:Super,Admin']],function(){
     Route::get('dashboard',function(){
         return view('dashboard.index');
     });

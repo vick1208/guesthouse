@@ -17,8 +17,8 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Telephone</th>
-                    <th scope="col">Email</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Gender</th>
                     <th scope="col">Job</th>
                     <th scope="col">Action</th>
                 </tr>
@@ -28,8 +28,8 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $guest->name }}</td>
-                        <td>{{ $guest->telephone }}</td>
-                        <td>{{ $guest->email }}</td>
+                        <td>{{ $guest->address }}</td>
+                        <td>{{ $guest->gender }}</td>
                         <td>{{ $guest->job }}</td>
                         <td>
                             <a href="/dashboard/guest/{{ $guest->id }}" class="badge bg-info"><span

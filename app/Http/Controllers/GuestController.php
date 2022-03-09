@@ -26,7 +26,9 @@ class GuestController extends Controller
      */
     public function create()
     {
-        return view('dashboard.guest.create');
+        return view('dashboard.guest.create',[
+            'genders'=> ['Pria', 'Wanita']
+        ]);
     }
 
     /**

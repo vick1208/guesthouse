@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('address');
-            $table->enum('gender',['Male', 'Female']);
+            $table->enum('gender',['Pria', 'Wanita']);
             $table->string('job');
             $table->date('birthdate');
             $table->foreignId('user_id')->constrained();
