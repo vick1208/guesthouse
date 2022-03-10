@@ -29,13 +29,7 @@ Route::post('login',[LoginController::class,'auth']);
 Route::post('/logout',[LoginController::class,'logout']);
 Route::post('/register',[RegisterController::class, 'store']);
 
-// Route::get('dashboard',function(){
-//     return view('dashboard.index');
-// })->middleware('auth');
 
-
-// Route::resource('dashboard/guest',GuestController::class)->middleware('auth');
-// Route::resource('dashboard/reserve',ReservationController::class)->middleware('auth');
 
 Route::group(['middleware'=>'guest'],function(){
     Route::get('login',[LoginController::class,'index'])->name('login');
