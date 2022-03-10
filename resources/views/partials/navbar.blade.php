@@ -21,11 +21,14 @@
                             Selamat Datang {{ auth()->user()->name }}
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                            @if (auth()->user()->role === "Super" or auth()->user()->role === "Admin")
                             <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-window"></i>My Dashboard</a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
+                            @endif
                             <li>
                                 <form action="/logout" method="post">
                                     @csrf
