@@ -41,7 +41,7 @@
                     <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
 
                 </form>
-                <small class="d-block text-center mt-3">Not registered as admin? <a href="/register">Register as admin</a></small>
+                {{-- <small class="d-block text-center mt-3">Not registered as admin? <a href="/register">Register as admin</a></small> --}}
             </main>
         </div>
     </div>

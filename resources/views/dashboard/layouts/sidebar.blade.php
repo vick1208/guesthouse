@@ -7,6 +7,15 @@
                     Dashboard
                 </a>
             </li>
+            @if (auth()->user()->role === "Super")
+
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('dashboard/user*')? 'active' : '' }}" href="/dashboard/user">
+                    <span data-feather="book"></span>
+                    User List
+                </a>
+            </li>
+            @endif
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard/guest*')? 'active' : '' }}" href="/dashboard/guest">
                     <span data-feather="book"></span>

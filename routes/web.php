@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\UserController;
 use GuzzleHttp\Middleware;
 
 /*
@@ -40,6 +41,11 @@ Route::group(['middleware'=>'guest'],function(){
     Route::get('login',[LoginController::class,'index'])->name('login');
     Route::get('/register', [RegisterController::class, 'index']);
 });
+
+Route::group(['middleware'=>['auth','roleCheck:Super']],function(){
+    Route::resource('dashboard/user',UserController::class);
+});
+
 
 Route::group(['middleware'=>['auth','roleCheck:Super,Admin']],function(){
     Route::get('dashboard',function(){
