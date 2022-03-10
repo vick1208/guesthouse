@@ -11,7 +11,7 @@
 
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard/user*')? 'active' : '' }}" href="/dashboard/user">
-                    <span data-feather="book"></span>
+                    <span data-feather="user"></span>
                     User List
                 </a>
             </li>
