@@ -27,13 +27,13 @@ Route::get('/', function () {
 
 Route::post('login',[LoginController::class,'auth']);
 Route::post('/logout',[LoginController::class,'logout']);
-Route::post('/register',[RegisterController::class, 'store']);
+// Route::post('/register',[RegisterController::class, 'store']);
 
 
 
 Route::group(['middleware'=>'guest'],function(){
     Route::get('login',[LoginController::class,'index'])->name('login');
-    Route::get('/register', [RegisterController::class, 'index']);
+    // Route::get('/register', [RegisterController::class, 'index']);
 });
 
 Route::group(['middleware'=>['auth','roleCheck:Super']],function(){

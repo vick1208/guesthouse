@@ -64,7 +64,9 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+        return view('dashboard.user.show',[
+            'user' => $user
+        ]);
     }
 
     /**
