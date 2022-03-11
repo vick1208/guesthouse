@@ -53,18 +53,18 @@
                 </div>
             @enderror
         </div>
-        <div class="mb-3">
+        {{-- <div class="mb-3">
             <label for="password">Password</label>
             <input type="password" name="password"
                 class="form-control @error('password') is-invalid @enderror" id="password"
-                placeholder="Password" required >
+                placeholder="Password" required>
             @error('password')
                 <div class="invalid-feedback">
                     {{ $message }}
                 </div>
             @enderror
-        </div>
-        <button type="submit" class="btn btn-warning">Update Guest</button>
+        </div> --}}
+        <button type="submit" class="btn btn-warning">Update User</button>
     </form>
 </div>
 

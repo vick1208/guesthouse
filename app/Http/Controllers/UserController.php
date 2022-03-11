@@ -92,9 +92,9 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        $rules=['name' => 'required|max:255',
-        'password' => 'required|min:8'];
 
+
+        $rules=['name' => 'required|max:255'];
         if ($request->username != $user->username){
             $rules['username'] = 'required|min:4|max:255|unique:users';
         }
