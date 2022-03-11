@@ -28,7 +28,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('dashboard.user.index',[
+        return view('dashboard.user.create',[
             'roles' => ['Super', 'Admin','Guest']
         ]);
     }
@@ -45,7 +45,7 @@ class UserController extends Controller
             'name' => 'required|max:255',
             'username' => 'required|min:4|max:255|unique:users',
             'role'=> 'required',
-            'email' => 'required|email:dns|unique:users',
+            'email' => 'required|email|unique:users',
             'password' => 'required|min:8'
         ]);
 
