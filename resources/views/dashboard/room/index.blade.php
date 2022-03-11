@@ -13,7 +13,7 @@
     @endif
     {{-- <a href="/dashboard/room/create" class="btn btn-primary mb-3">Create new Room</a> --}}
 
-    @if (auth()->user()->role === "Super")
+
 
     <span data-bs-toggle="tooltip" data-bs-placement="right" title="Create new Room">
         <button type="button" class="btn btn-sm btn-primary shadow-sm myBtn border rounded" data-bs-toggle="modal"
@@ -21,7 +21,7 @@
             Create new Room
         </button>
     </span>
-    @endif
+
     <table class="table table-striped table-sm">
         <thead>
             <tr>
@@ -47,7 +47,7 @@
                         <a href="/dashboard/room/{{ $room->id }}" class="badge bg-info"><span
                                 data-feather="eye"></span></a>
 
-                        @if (auth()->user()->role === "Super")
+
                         <a href="/dashboard/room/{{ $room->id }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a>
 
                         <form action="/dashboard/room/{{ $room->id }}" method="POST" class="d-inline">
@@ -57,7 +57,7 @@
                                 onclick="return confirm('Apakah Anda Ingin Menghapus?')"><span
                                     data-feather="x-octagon"></span></button>
                         </form>
-                        @endif
+
                     </td>
                 </tr>
             @endforeach

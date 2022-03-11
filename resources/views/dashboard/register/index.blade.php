@@ -23,7 +23,6 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">ID</th>
                     <th scope="col">Name</th>
                     <th scope="col">Room</th>
                     <th scope="col">Action</th>
@@ -33,7 +32,6 @@
                 @forelse ($regs as $reg)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $reg->id }}</td>
                         <td>{{ $reg->guest->name }} </td>
                         <td>{{ $reg->room->number }}</td>
                         <td>
@@ -67,17 +65,16 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Guest have any account?</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Guest has been recorded?</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="d-flex justify-content-center">
                     <a class="btn btn-sm btn-primary m-1"
                         href="/dashboard/guest/create">No, create
-                        new account!</a>
+                        new guest!</a>
                     <a class="btn btn-sm btn-success m-1"
-                        href="#">Yes, use
-                        their account!</a>
+                        href="/dashboard/register/create">Yes, guest has been recorded!</a>
                 </div>
             </div>
             <div class="modal-footer">

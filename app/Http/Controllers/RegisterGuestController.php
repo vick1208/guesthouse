@@ -23,7 +23,7 @@ class RegisterGuestController extends Controller
         // if (!empty($request->search)) {
         //     $regs = $regs->where('id', '=', $request->search);
         // }
-        return view('dashboard.register.index',compact('regs'));
+        return view('dashboard.register.index', compact('regs'));
     }
 
     /**
@@ -33,7 +33,10 @@ class RegisterGuestController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.register.create', [
+            'guests' => Guest::all(),
+            'rooms' => Room::all()
+        ]);
     }
 
     /**

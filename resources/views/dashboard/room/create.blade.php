@@ -12,7 +12,7 @@
         <label for="type" class="form-label">Room Type</label>
         <select class="form-select" name="type_id">
            @foreach ( $types as $type)
-            @if (old('type_id')== $type->name)
+            @if (old('type_id')== $type->id)
             <option value="{{ $type->id }}" selected>{{ $type->name }}</option>
             @else
             <option value="{{ $type->id }}">{{ $type->name }}</option>

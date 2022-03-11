@@ -16,7 +16,7 @@
             <label for="type" class="form-label">Room Type</label>
             <select class="form-select" name="type_id">
                @foreach ( $types as $type)
-                @if (old('type_id',$room->type_id)== $type->name)
+                @if (old('type_id',$room->type_id)== $type->id)
                 <option value="{{ $type->id }}" selected>{{ $type->name }}</option>
                 @else
                 <option value="{{ $type->id }}">{{ $type->name }}</option>
@@ -28,7 +28,7 @@
             <label for="status" class="form-label">Room Status</label>
             <select class="form-select" name="room_status_id">
                @foreach ( $status as $stat)
-                @if (old('room_status_id',$room->room_status_id)== $stat->name)
+                @if (old('room_status_id',$room->room_status_id)== $stat->id)
                 <option value="{{ $stat->id }}" selected>{{ $stat->name }}</option>
                 @else
                 <option value="{{ $stat->id }}">{{ $stat->name }}</option>
