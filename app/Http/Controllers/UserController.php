@@ -107,9 +107,6 @@ class UserController extends Controller
 
         $validatedData = $request->validate($rules);
 
-
-
-
         User::where('id',$user->id)->update($validatedData);
 
         return redirect('/dashboard/user')->with('success', 'User telah diubah.');
