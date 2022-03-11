@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Room;
+use App\Models\RoomStatus;
+use App\Models\Type;
 use Illuminate\Http\Request;
 
 class RoomController extends Controller
@@ -26,7 +28,10 @@ class RoomController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.room.create',[
+            'types' => Type::all(),
+            'status' => RoomStatus::all()
+        ]);
     }
 
     /**
@@ -37,7 +42,20 @@ class RoomController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        // @dd($request);
+
+        $valid = $request->validate([
+            "type_id" => 'required|string',
+            "room_status_id"=> 'required|string',
+            "number"=>'required|max:255',
+            "capacity" => 'required',
+            "price" => 'required',
+            "view" => 'required'
+        ]);
+
+        Room::create($valid);
+        return redirect('/dashboard/room')->with('success', 'Data Room ditambahkan.');
     }
 
     /**
@@ -48,7 +66,10 @@ class RoomController extends Controller
      */
     public function show(Room $room)
     {
-        //
+        return view('dashboard.room.show',[
+            'room' => $room
+
+        ]);
     }
 
     /**
@@ -59,7 +80,11 @@ class RoomController extends Controller
      */
     public function edit(Room $room)
     {
-        //
+        return view('dashboard.room.edit',[
+            'room' => $room,
+            'types' => Type::all(),
+            'status' => RoomStatus::all()
+        ]);
     }
 
     /**
@@ -71,7 +96,21 @@ class RoomController extends Controller
      */
     public function update(Request $request, Room $room)
     {
-        //
+        // @dd($request,$room);
+
+        $rules = [
+            "type_id" => 'required|string',
+            "room_status_id"=> 'required|string',
+            "number"=>'required|max:255',
+            "capacity" => 'required',
+            "price" => 'required',
+            "view" => 'required'
+        ];
+
+        $validated = $request->validate($rules);
+        Room::where('id',$room->id)->update($validated);
+
+        return redirect('/dashboard/room')->with('success', 'Room telah diubah.');
     }
 
     /**
@@ -82,6 +121,7 @@ class RoomController extends Controller
      */
     public function destroy(Room $room)
     {
-        //
+        Room::destroy($room->id);
+        return redirect('/dashboard/room')->with('success', 'Room telah dihapus.');
     }
 }

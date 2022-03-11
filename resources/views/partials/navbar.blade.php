@@ -22,7 +22,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                            @if (auth()->user()->role === "Super" or auth()->user()->role === "Admin")
+                            @if (auth()->user()->role === "Super" || auth()->user()->role === "Admin")
                             <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-window"></i>My Dashboard</a>
                             </li>
                             <li>

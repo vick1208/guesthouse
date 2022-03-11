@@ -28,6 +28,12 @@
                     Room List
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('dashboard/register*')? 'active' : '' }}" href="/dashboard/register">
+                    <span data-feather="user"></span>
+                    Register Guest
+                </a>
+            </li>
 
             <li class="border-top my-3">
 
