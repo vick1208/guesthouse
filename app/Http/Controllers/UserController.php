@@ -77,7 +77,10 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view('dashboard.user.edit',[
+            'user' => $user,
+            'roles' => ['Super', 'Admin','Guest']
+        ]);
     }
 
     /**
@@ -89,7 +92,28 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $rules=['name' => 'required|max:255',
+        'password' => 'required|min:8'];
+
+        if ($request->username != $user->username){
+            $rules['username'] = 'required|min:4|max:255|unique:users';
+        }
+
+        if ($request->email != $user->email) {
+            $rules['email'] = 'required|email|unique:users';
+        }
+        // 'username' => 'required|min:4|max:255|unique:users',
+        // 'email' => 'required|email|unique:users',
+
+        $validatedData = $request->validate($rules);
+
+
+
+
+        User::where('id',$user->id)->update($validatedData);
+
+        return redirect('/dashboard/user')->with('success', 'User telah diubah.');
+
     }
 
     /**
