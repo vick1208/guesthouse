@@ -1,6 +1,8 @@
 @extends('dashboard.layouts.main')
 
 @section('container')
+
+{{-- @dd($registers); --}}
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Register Guest</h1>
     </div>
@@ -25,22 +27,28 @@
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
                     <th scope="col">Room</th>
+                    <th scope="col">Register Type</th>
+                    <th scope="col">Check in</th>
+                    <th scope="col">Check out</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
-                @forelse ($regs as $reg)
+                @forelse ($registers as $reg)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $reg->guest->name }} </td>
                         <td>{{ $reg->room->number }}</td>
+                        <td>{{ $reg->register_type }}</td>
+                        <td>{{ $reg->check_in }}</td>
+                        <td>{{ $reg->check_out }}</td>
                         <td>
-                            <a href="/dashboard/guest/{{ $reg->id }}" class="badge bg-info"><span
+                            <a href="/dashboard/register/{{ $reg->id }}" class="badge bg-info"><span
                                     data-feather="eye"></span></a>
-                            <a href="/dashboard/guest/{{ $reg->id }}/edit" class="badge bg-warning"><span
+                            <a href="/dashboard/register/{{ $reg->id }}/edit" class="badge bg-warning"><span
                                     data-feather="edit"></span></a>
 
-                            <form action="/dashboard/guest/{{ $reg->id }}" method="POST" class="d-inline">
+                            <form action="/dashboard/register/{{ $reg->id }}" method="POST" class="d-inline">
                                 @method('delete')
                                 @csrf
                                 <button class="badge bg-danger border-0"

@@ -6,7 +6,6 @@ use App\Models\Guest;
 use App\Models\RegisterGuest;
 use App\Models\Room;
 use Illuminate\Http\Request;
-// use Illuminate\Support\Carbon;
 
 class RegisterGuestController extends Controller
 {
@@ -15,15 +14,11 @@ class RegisterGuestController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        // $register = $this->;
-        $regs = RegisterGuest::with('user', 'room', 'guest');
-
-        // if (!empty($request->search)) {
-        //     $regs = $regs->where('id', '=', $request->search);
-        // }
-        return view('dashboard.register.index', compact('regs'));
+        return view('dashboard.register.index',[
+            "registers" => RegisterGuest::with(['user','guest','room'])->get()
+        ]);
     }
 
     /**
@@ -47,51 +42,87 @@ class RegisterGuestController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $valid = $request->validate(
+            [
+                "room_id" => 'required',
+                "guest_id" => 'required',
+                "check_in" => 'required|date',
+                "check_out" => 'required|date',
+                "register_type" => 'required'
+            ]
+        );
+        $valid['user_id'] = auth()->user()->id;
+
+        RegisterGuest::create($valid);
+
+        return redirect('/dashboard/register')->with('success','Guest telah diregistrasi');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\registerguest  $registerguest
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(registerguest $registerguest)
+    public function show($id)
     {
-        //
+        return view('dashboard.register.show',[
+            'reg'=> RegisterGuest::find($id)
+
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\registerguest  $registerguest
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(registerguest $registerguest)
+    public function edit($id)
     {
-        //
+        return view('dashboard.register.edit',[
+            'register'=> RegisterGuest::find($id),
+            'guests' => Guest::all(),
+            'rooms' => Room::all()
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\registerguest  $registerguest
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, registerguest $registerguest)
+    public function update(Request $request, $id)
     {
-        //
+        // @dd($request,$id);
+        $valid = $request->validate(
+            [
+                "room_id" => 'required',
+                "guest_id" => 'required',
+                "check_in" => 'required|date',
+                "check_out" => 'required|date',
+                "register_type" => 'required'
+            ]
+        );
+        $valid['user_id'] = auth()->user()->id;
+        RegisterGuest::where('id',$id)->update($valid);
+
+        return redirect('/dashboard/register')->with('success', 'Data register telah diubah.');
+
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\registerguest  $registerguest
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(registerguest $registerguest)
+    public function destroy($id)
     {
-        //
+        RegisterGuest::destroy($id);
+        return redirect('/dashboard/register')->with('success', 'Guest telah dihapus.');
     }
 }

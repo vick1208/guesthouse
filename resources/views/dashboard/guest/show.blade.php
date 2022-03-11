@@ -1,6 +1,7 @@
 @extends('dashboard.layouts.main')
 
 @section('container')
+@dd($guest);
     <div class="container">
         <div class="row my-3">
             <div class="col-lg-8">
