@@ -28,7 +28,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('dashboard.user.create',[
+        return view('dashboard.user.index',[
             'roles' => ['Super', 'Admin','Guest']
         ]);
     }

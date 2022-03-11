@@ -62,4 +62,7 @@
                 @enderror
             </div>
             <button type="submit" class="btn btn-primary">Create User</button>
-        @endsection
+
+        </form>
+    </div>
+@endsection
