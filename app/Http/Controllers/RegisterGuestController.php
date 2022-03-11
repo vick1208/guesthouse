@@ -96,7 +96,7 @@ class RegisterGuestController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // @dd($request,$id);
+
         $valid = $request->validate(
             [
                 "room_id" => 'required',

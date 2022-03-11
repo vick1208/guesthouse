@@ -39,7 +39,7 @@ class GuestController extends Controller
      */
     public function store(Request $request)
     {
-        // @dd($request);
+
         $valid = $request->validate(
             [
                 "name" => 'required|max:255',
@@ -92,7 +92,7 @@ class GuestController extends Controller
     public function update(Request $request, Guest $guest)
     {
 
-        // @dd($request);
+
 
         $rules =  [
             "name" => 'required|max:255',

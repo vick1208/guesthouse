@@ -43,7 +43,7 @@ class RoomController extends Controller
     public function store(Request $request)
     {
 
-        // @dd($request);
+
 
         $valid = $request->validate([
             "type_id" => 'required|string',
@@ -96,7 +96,7 @@ class RoomController extends Controller
      */
     public function update(Request $request, Room $room)
     {
-        // @dd($request,$room);
+
 
         $rules = [
             "type_id" => 'required|string',

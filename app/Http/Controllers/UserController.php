@@ -102,8 +102,7 @@ class UserController extends Controller
         if ($request->email != $user->email) {
             $rules['email'] = 'required|email|unique:users';
         }
-        // 'username' => 'required|min:4|max:255|unique:users',
-        // 'email' => 'required|email|unique:users',
+
 
         $validatedData = $request->validate($rules);
 
