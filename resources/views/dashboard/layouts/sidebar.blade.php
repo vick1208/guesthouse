@@ -15,6 +15,7 @@
                     User Record
                 </a>
             </li>
+            @endif
 
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard/room*')? 'active' : '' }}" href="/dashboard/room">
@@ -22,9 +23,7 @@
                     Room Record
                 </a>
             </li>
-            @endif
 
-            @if (auth()->user()->role === "Admin")
 
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard/guest*')? 'active' : '' }}" href="/dashboard/guest">
@@ -39,7 +38,7 @@
                     Register Guest
                 </a>
             </li>
-            @endif
+
 
 
 
