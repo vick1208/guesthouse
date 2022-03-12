@@ -39,15 +39,13 @@
                 </a>
             </li>
 
-
-
-
             <li class="border-top my-2"></li>
 
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard/guesthis*')? 'active' : '' }}" href=#>
                     <span data-feather="user"></span>
                     History Guest
+
                 </a>
             </li>
         </ul>
