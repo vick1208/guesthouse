@@ -43,7 +43,7 @@
 
 
 
-            <li class="border-top my-3"></li>
+            <li class="border-top my-2"></li>
 
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard/guesthis*')? 'active' : '' }}" href=#>
