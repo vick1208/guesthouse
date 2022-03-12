@@ -43,8 +43,13 @@
 
 
 
-            <li class="border-top my-3">
+            <li class="border-top my-3"></li>
 
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('dashboard/guesthis*')? 'active' : '' }}" href=#>
+                    <span data-feather="user"></span>
+                    History Guest
+                </a>
             </li>
         </ul>
     </div>

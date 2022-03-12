@@ -6,6 +6,9 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Enum;
+use Illuminate\Validation\ValidationException;
+
+use function PHPUnit\Framework\throwException;
 
 class UserController extends Controller
 {
@@ -43,7 +46,6 @@ class UserController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|max:255',
-            'username' => 'required|min:4|max:255|unique:users',
             'role'=> 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:8'
@@ -93,22 +95,38 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
 
+        $rules=['name' => 'required|max:255',
+        'role' => 'required',
+        'current_password'=>'required',
+        'password'=> 'required|min:8|confirmed'
+    ];
 
-        $rules=['name' => 'required|max:255'];
-        if ($request->username != $user->username){
-            $rules['username'] = 'required|min:4|max:255|unique:users';
-        }
 
-        if ($request->email != $user->email) {
-            $rules['email'] = 'required|email|unique:users';
-        }
+    if ($request->email != $user->email) {
+        $rules['email'] = 'required|email|unique:users';
+    }
+
+
+    if (Hash::check( $request->current_password, $user->password)) {
+
 
 
         $validatedData = $request->validate($rules);
+        $validatedData['current_password']= bcrypt($validatedData['current_password']);
+        $validatedData['password']= Hash::make($validatedData['password']);
 
-        User::where('id',$user->id)->update($validatedData);
+            User::where('id',$user->id)->update($validatedData);
 
-        return redirect('/dashboard/user')->with('success', 'User telah diubah.');
+            return redirect('/dashboard/user')->with('success', 'User telah diubah.');
+
+        }
+
+
+        throw ValidationException::withMessages([
+            'current_password' => "Your current does not match"
+        ]);
+
+
 
     }
 

@@ -29,6 +29,12 @@
                                 <hr class="dropdown-divider">
                             </li>
                             @endif
+                            @if (auth()->user()->role === "Guest")
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            @endif
+
                             <li>
                                 <form action="/logout" method="post">
                                     @csrf

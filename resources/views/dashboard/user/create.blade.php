@@ -8,16 +8,6 @@
         <form action="/dashboard/user" method="post" class="mb-5">
             @csrf
             <div class="mb-3">
-                <label for="username">Username</label>
-                <input type="text" name="username" class="form-control @error('username') is-invalid @enderror" id="username"
-                    placeholder="Username" required value="{{ old('username') }}">
-                @error('username')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-            <div class="mb-3">
                 <label for="name">Name</label>
                 <input type="text" name="name" class="form-control rounded-top @error('name') is-invalid @enderror "
                     id="name" placeholder="Name" required value="{{ old('name') }}">

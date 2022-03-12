@@ -21,7 +21,6 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">User Name</th>
                 <th scope="col">Nama</th>
                 <th scope="col">Email</th>
                 <th scope="col">Role</th>
@@ -32,7 +31,6 @@
             @foreach ($users as $user)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $user->username }}</td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->role }}</td>
