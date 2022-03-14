@@ -4,6 +4,7 @@ use App\Http\Controllers\GuestController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterGuestController;
+use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\UserController;
 
@@ -45,5 +46,6 @@ Route::group(['middleware'=>['auth','roleCheck:Super,Admin']],function(){
     Route::resource('dashboard/guest',GuestController::class);
     Route::resource('dashboard/room',RoomController::class);
     Route::resource('dashboard/register',RegisterGuestController::class);
+    Route::get('dashboard/reserve',[ReservationController::class,'index'])->name('reserve');
 
 });

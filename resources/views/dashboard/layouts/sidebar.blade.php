@@ -42,10 +42,9 @@
             <li class="border-top my-2"></li>
 
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('dashboard/guesthis*')? 'active' : '' }}" href=#>
-                    <span data-feather="user"></span>
-                    History Guest
-
+                <a class="nav-link {{ Request::is('dashboard/reserve*')? 'active' : '' }}" href="/dashboard/reserve">
+                    <span data-feather="book-open"></span>
+                    Reservation Room
                 </a>
             </li>
         </ul>
