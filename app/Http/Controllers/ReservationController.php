@@ -10,5 +10,14 @@ class ReservationController extends Controller
         return view('dashboard.reservation.index');
     }
 
+    public function create(){
+        return view('dashboard.reservation.create');
+    }
+
+    public function store(Request $request)
+    {
+        return redirect(route('reserve'));
+    }
+
 
 }

@@ -47,5 +47,7 @@ Route::group(['middleware'=>['auth','roleCheck:Super,Admin'],'prefix'=>'dashboar
     Route::resource('/room',RoomController::class);
     Route::resource('/register',RegisterGuestController::class)->except(['destroy']);
     Route::get('/reserve',[ReservationController::class,'index'])->name('reserve');
+    Route::get('/reserve/create',[ReservationController::class,'create']);
+    Route::get('/reserve/store',);
 
 });

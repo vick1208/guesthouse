@@ -42,6 +42,7 @@ class GuestController extends Controller
 
         $valid = $request->validate(
             [
+                "id_number" => 'required|unique:users',
                 "name" => 'required|max:255',
                 "address" => 'required',
                 "gender" => 'required',
@@ -101,6 +102,9 @@ class GuestController extends Controller
             "birthdate" => 'required|date',
             "job" => 'required'
         ];
+        if($request->id_number != $guest->id_number){
+            $rules['id_number'] = 'required|unique:users';
+        }
 
         $valid = $request->validate($rules);
         $valid['user_id'] = auth()->user()->id;

@@ -19,7 +19,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('dashboard.user.index',[
+        return view('dashboard.user.index', [
             'users' => User::all()
         ]);
     }
@@ -31,8 +31,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('dashboard.user.create',[
-            'roles' => ['Super', 'Admin','Guest']
+        return view('dashboard.user.create', [
+            'roles' => ['Super', 'Admin', 'Guest']
         ]);
     }
 
@@ -46,12 +46,12 @@ class UserController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|max:255',
-            'role'=> 'required',
+            'role' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:8'
         ]);
 
-        $validatedData['password']= Hash::make($validatedData['password']);
+        $validatedData['password'] = Hash::make($validatedData['password']);
 
         User::create($validatedData);
 
@@ -66,7 +66,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return view('dashboard.user.show',[
+        return view('dashboard.user.show', [
             'user' => $user
         ]);
     }
@@ -79,9 +79,9 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('dashboard.user.edit',[
+        return view('dashboard.user.edit', [
             'user' => $user,
-            'roles' => ['Super', 'Admin','Guest']
+            'roles' => ['Super', 'Admin', 'Guest']
         ]);
     }
 
@@ -95,39 +95,31 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
 
-        $rules=['name' => 'required|max:255',
-        'role' => 'required',
-        'current_password'=>'required',
-        'password'=> 'required|min:8|confirmed'
-    ];
+        $rules = [
+            'name' => 'required|max:255',
+            'role' => 'required',
+            'current_password' => 'required',
+            'password' => 'required|min:8|confirmed'
+        ];
 
 
-    if ($request->email != $user->email) {
-        $rules['email'] = 'required|email|unique:users';
-    }
+        if ($request->email != $user->email) {
+            $rules['email'] = 'required|email|unique:users';
+        }
 
 
-    if (Hash::check( $request->current_password, $user->password)) {
-
-
-
-        $validatedData = $request->validate($rules);
-        $validatedData['current_password']= bcrypt($validatedData['current_password']);
-        $validatedData['password']= Hash::make($validatedData['password']);
-
-            User::where('id',$user->id)->update($validatedData);
-
+        if (Hash::check($request->current_password, $user->password)) {
+            $validatedData = $request->validate($rules);
+            $validatedData['current_password'] = bcrypt($validatedData['current_password']);
+            $validatedData['password'] = Hash::make($validatedData['password']);
+            User::where('id', $user->id)->update($validatedData);
             return redirect('/dashboard/user')->with('success', 'User telah diubah.');
-
         }
 
 
         throw ValidationException::withMessages([
             'current_password' => "Your current does not match"
         ]);
-
-
-
     }
 
     /**

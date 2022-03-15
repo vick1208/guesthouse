@@ -60,7 +60,7 @@
                             href="/dashboard/guest/create">Yes, create
                             new guest!</a>
                         <a class="btn btn-sm btn-secondary m-1"
-                            href="/dashboard/register/create">The guest has been recorded!</a>
+                            href="/dashboard/reserve/create">The guest has been recorded!</a>
                     </div>
                 </div>
                 <div class="modal-footer">

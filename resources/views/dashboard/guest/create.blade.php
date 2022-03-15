@@ -9,6 +9,17 @@
         <form action="/dashboard/guest" method="post" class="mb-5">
             @csrf
             <div class="mb-3">
+                <label for="id_number" class="form-label">NIK/Passport/SIM</label>
+                <input type="text" class="form-control @error('id_number') is-invalid @enderror" id="id_number" name="id_number"
+                    value="{{ old('id_number') }}">
+
+                @error('id_number')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+            <div class="mb-3">
                 <label for="name" class="form-label">Nama</label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
                     value="{{ old('name') }}">
