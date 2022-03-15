@@ -6,12 +6,11 @@
         <h1 class="h2">Reservation Room</h1>
     </div>
 
-    <div class="d-flex justify-content-evenly ">
+    <div class="d-flex justify-content-center">
 
         <button type="button" class="btn btn-primary btn-lg shadow-sm myBtn border rounded" data-bs-toggle="modal"
             data-bs-target="#reserve">Reservation</button>
-        <button type="button" class="btn btn-danger btn-lg shadow-sm myBtn border rounded" data-bs-toggle="modal"
-            data-bs-target="#cancel">Cancellation</button>
+
 
 
     </div>
@@ -60,8 +59,8 @@
                         <a class="btn btn-sm btn-success m-1"
                             href="/dashboard/guest/create">Yes, create
                             new guest!</a>
-                        {{-- <a class="btn btn-sm btn-success m-1"
-                            href="/dashboard/register/create">Yes, guest has been recorded!</a> --}}
+                        <a class="btn btn-sm btn-secondary m-1"
+                            href="/dashboard/register/create">The guest has been recorded!</a>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -70,21 +69,5 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="cancel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
+
 @endsection
