@@ -31,29 +31,34 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($guests as $guest)
-                    <tr>
-                        <td>{{ $loop->iteration }}</td>
-                        <td>{{ $guest->name }}</td>
-                        <td>{{ $guest->address }}</td>
-                        <td>{{ $guest->gender }}</td>
-                        <td>{{ $guest->job }}</td>
-                        <td>
-                            <a href="/dashboard/guest/{{ $guest->id }}" class="badge bg-info"><span
-                                    data-feather="eye"></span></a>
-                            <a href="/dashboard/guest/{{ $guest->id }}/edit" class="badge bg-warning"><span
-                                    data-feather="edit"></span></a>
+                @forelse ($guests as $guest)
+                <tr>
+                    <td>{{ $loop->iteration }}</td>
+                    <td>{{ $guest->name }}</td>
+                    <td>{{ $guest->address }}</td>
+                    <td>{{ $guest->gender }}</td>
+                    <td>{{ $guest->job }}</td>
+                    <td>
+                        <a href="/dashboard/guest/{{ $guest->id }}" class="badge bg-info"><span
+                                data-feather="eye"></span></a>
+                        <a href="/dashboard/guest/{{ $guest->id }}/edit" class="badge bg-warning"><span
+                                data-feather="edit"></span></a>
 
-                            <form action="/dashboard/guest/{{ $guest->id }}" method="POST" class="d-inline">
-                                @method('delete')
-                                @csrf
-                                <button class="badge bg-danger border-0"
-                                    onclick="return confirm('Apakah Anda Ingin Menghapus?')"><span
-                                        data-feather="x-octagon"></span></button>
-                            </form>
-                        </td>
-                    </tr>
-                @endforeach
+                        <form action="/dashboard/guest/{{ $guest->id }}" method="POST" class="d-inline">
+                            @method('delete')
+                            @csrf
+                            <button class="badge bg-danger border-0"
+                                onclick="return confirm('Apakah Anda Ingin Menghapus?')"><span
+                                    data-feather="x-octagon"></span></button>
+                        </form>
+                    </td>
+                </tr>
+                @empty
+                <td colspan="15" class="text-center">
+                    There's no data in this table
+                </td>
+                @endforelse
+
             </tbody>
         </table>
     </div>

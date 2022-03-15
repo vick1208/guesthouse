@@ -11,16 +11,16 @@
             {{ session('success') }}
         </div>
     @endif
-    {{-- <a href="/dashboard/room/create" class="btn btn-primary mb-3">Create new Room</a> --}}
+    <a href="/dashboard/room/create" class="btn btn-primary mb-3">Create new Room</a>
 
 
 
-    <span data-bs-toggle="tooltip" data-bs-placement="right" title="Create new Room">
+    {{-- <span data-bs-toggle="tooltip" data-bs-placement="right" title="Create new Room">
         <button type="button" class="btn btn-sm btn-primary shadow-sm myBtn border rounded" data-bs-toggle="modal"
             data-bs-target="#staticBackdrop">
             Create new Room
         </button>
-    </span>
+    </span> --}}
 
     <table class="table table-striped table-sm">
         <thead>
@@ -64,7 +64,7 @@
         </tbody>
     </table>
 </div>
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+{{-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -84,5 +84,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 @endsection
