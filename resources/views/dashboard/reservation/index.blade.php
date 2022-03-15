@@ -8,13 +8,14 @@
 
     <div class="d-flex justify-content-evenly ">
 
-        <button type="button" class="btn btn-success btn-lg shadow-sm myBtn border rounded" data-bs-toggle="modal"
-            data-bs-target="#checkin">Check In</button>
+        <button type="button" class="btn btn-primary btn-lg shadow-sm myBtn border rounded" data-bs-toggle="modal"
+            data-bs-target="#reserve">Reservation</button>
         <button type="button" class="btn btn-danger btn-lg shadow-sm myBtn border rounded" data-bs-toggle="modal"
-            data-bs-target="#checkout">Check Out</button>
+            data-bs-target="#cancel">Cancellation</button>
 
 
     </div>
+
     <div class="table-responsive col-lg-19 border-top my-5">
         <h5 class="text-center my-3">Reservation History</h5>
         @if (session()->has('success'))
@@ -46,7 +47,7 @@
             </tbody>
         </table>
     </div>
-    <div class="modal fade" id="checkin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="reserve" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -69,7 +70,7 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="checkout" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="cancel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">

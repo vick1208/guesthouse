@@ -48,6 +48,7 @@
                             <a href="/dashboard/register/{{ $reg->id }}/edit" class="badge bg-warning"><span
                                     data-feather="edit"></span></a>
 
+
                         </td>
                     </tr>
                 @empty
