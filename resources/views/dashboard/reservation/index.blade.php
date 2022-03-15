@@ -34,8 +34,8 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Room</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Kamar</th>
                 </tr>
             </thead>
             <tbody>

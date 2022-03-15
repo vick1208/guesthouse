@@ -24,7 +24,7 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Name</th>
+                    <th scope="col">Nama</th>
                     <th scope="col">Kamar</th>
                     <th scope="col">Tipe Registrasi</th>
                     <th scope="col">Check in</th>
