@@ -18,6 +18,9 @@
             </form>
 
             <h1>{{ $reg->guest->name }}</h1>
+            <P>
+                {{ $reg->register_type }}
+            </P>
         </div>
     </div>
 </div>

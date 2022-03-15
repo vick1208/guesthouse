@@ -26,11 +26,11 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Type</th>
-                <th scope="col">Room Status</th>
-                <th scope="col">Number</th>
-                <th scope="col">Capacity</th>
-                <th scope="col">Price</th>
+                <th scope="col">Tipe</th>
+                <th scope="col">Status Kamar</th>
+                <th scope="col">Nomor</th>
+                <th scope="col">Kapasitas</th>
+                <th scope="col">Harga</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>

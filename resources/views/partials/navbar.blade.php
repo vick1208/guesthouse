@@ -47,7 +47,7 @@
                     <li class="nav-item">
                         <a class="nav-link {{Request::is('login')? 'active' : '' }}" href="/login"><i
                                 class="bi bi-box-arrow-in-right"></i>
-                            Login</a>
+                            Admin Login</a>
                     </li>
                 @endauth
             </ul>

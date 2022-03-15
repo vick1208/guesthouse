@@ -10,6 +10,17 @@
             @method('put')
             @csrf
             <div class="mb-3">
+                <label for="id_number" class="form-label">NIK/Paspor/SIM</label>
+                <input type="text" class="form-control @error('id_number') is-invalid @enderror" id="id_number" name="id_number"
+                    value="{{ old('id_number',$guest->id_number) }}">
+
+                @error('id_number')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+            <div class="mb-3">
                 <label for="name" class="form-label">Nama</label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
                     value="{{ old('name',$guest->name) }}">
@@ -25,6 +36,16 @@
                 <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address"
                     value="{{ old('address',$guest->address) }}">
                 @error('address')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+            <div class="mb-3">
+                <label for="nationality" class="form-label">Kebangsaan</label>
+                <input type="text" class="form-control @error('nationality') is-invalid @enderror" id="nationality" name="nationality"
+                    value="{{ old('nationality',$guest->nationality) }}">
+                @error('nationality')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -65,7 +86,7 @@
                 @enderror
             </div> --}}
             <div class="mb-3">
-                <label for="job" class="form-label">Job Title</label>
+                <label for="job" class="form-label">Jabatan</label>
                 <input type="text" class="form-control @error('job') is-invalid @enderror" id="job" name="job"
                     value="{{ old('job',$guest->job) }}">
                 @error('job')

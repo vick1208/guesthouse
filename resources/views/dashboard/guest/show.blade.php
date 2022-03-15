@@ -24,7 +24,7 @@
                 </h1>
                 <br> Alamat : {{ $guest->address }}
                 <br> Jenis Kelamin : {{ $guest->gender }}
-                <br> Pekerjaan : {{ $guest->job }}
+                <br> Jabatan : {{ $guest->job }}
                 <br> Dicatat oleh : {{ $guest->user->name }}
                 </p>
 

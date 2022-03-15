@@ -42,9 +42,10 @@ class GuestController extends Controller
 
         $valid = $request->validate(
             [
-                "id_number" => 'required|unique:users',
+                "id_number" => 'required|unique:guests',
                 "name" => 'required|max:255',
                 "address" => 'required',
+                "nationality"=>'required|max:255',
                 "gender" => 'required',
                 "birthdate" => 'required|date',
                 "job" => 'required'
@@ -98,12 +99,13 @@ class GuestController extends Controller
         $rules =  [
             "name" => 'required|max:255',
             "address" => 'required',
+            "nationality"=>'required|max:255',
             "gender" => 'required',
             "birthdate" => 'required|date',
             "job" => 'required'
         ];
         if($request->id_number != $guest->id_number){
-            $rules['id_number'] = 'required|unique:users';
+            $rules['id_number'] = 'required|unique:guests';
         }
 
         $valid = $request->validate($rules);

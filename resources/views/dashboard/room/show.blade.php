@@ -19,7 +19,7 @@
 
 
 
-            <h1>Type : {{ $room->type->name }}</h1>
+            <h1>Tipe : {{ $room->type->name }}</h1>
             <h1>Status : {{ $room->roomStatus->name }}</h1>
 
 

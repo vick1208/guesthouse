@@ -23,10 +23,10 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">Gender</th>
-                    <th scope="col">Job</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Alamat</th>
+                    <th scope="col">Jenis Kelamin</th>
+                    <th scope="col">Pekerjaan</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>

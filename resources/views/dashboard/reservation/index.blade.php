@@ -36,9 +36,6 @@
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
                     <th scope="col">Room</th>
-                    <th scope="col">Gender</th>
-                    <th scope="col">Job</th>
-                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>

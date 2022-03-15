@@ -12,7 +12,7 @@
             @csrf
 
             <div class="mb-3">
-                <label for="name">Name</label>
+                <label for="name">Nama</label>
                 <input type="text" name="name" class="form-control rounded-top @error('name') is-invalid @enderror "
                     id="name" placeholder="Name" required value="{{ old('name', $user->name) }}">
                 @error('name')
