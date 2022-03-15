@@ -45,7 +45,7 @@ Route::group(['middleware'=>['auth','roleCheck:Super,Admin']],function(){
     });
     Route::resource('dashboard/guest',GuestController::class);
     Route::resource('dashboard/room',RoomController::class);
-    Route::resource('dashboard/register',RegisterGuestController::class);
+    Route::resource('dashboard/register',RegisterGuestController::class)->except(['destroy']);
     Route::get('dashboard/reserve',[ReservationController::class,'index'])->name('reserve');
 
 });

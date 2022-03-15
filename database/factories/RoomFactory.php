@@ -30,7 +30,7 @@ class RoomFactory extends Factory
             1750000,
             2000000,
         );
-        static $order = 101;
+        static $order = 10;
         return [
             'type_id' => Type::all()->random()->id,
             'room_status_id' => '1',
