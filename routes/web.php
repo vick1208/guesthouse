@@ -39,13 +39,13 @@ Route::group(['middleware'=>['auth','roleCheck:Super']],function(){
 });
 
 
-Route::group(['middleware'=>['auth','roleCheck:Super,Admin']],function(){
-    Route::get('dashboard',function(){
+Route::group(['middleware'=>['auth','roleCheck:Super,Admin'],'prefix'=>'dashboard'],function(){
+    Route::get('/',function(){
         return view('dashboard.index');
     });
-    Route::resource('dashboard/guest',GuestController::class);
-    Route::resource('dashboard/room',RoomController::class);
-    Route::resource('dashboard/register',RegisterGuestController::class)->except(['destroy']);
-    Route::get('dashboard/reserve',[ReservationController::class,'index'])->name('reserve');
+    Route::resource('/guest',GuestController::class);
+    Route::resource('/room',RoomController::class);
+    Route::resource('/register',RegisterGuestController::class)->except(['destroy']);
+    Route::get('/reserve',[ReservationController::class,'index'])->name('reserve');
 
 });
