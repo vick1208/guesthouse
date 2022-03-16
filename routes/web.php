@@ -7,6 +7,7 @@ use App\Http\Controllers\RegisterGuestController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\UserController;
+use App\Models\Reservation;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,8 +47,7 @@ Route::group(['middleware'=>['auth','roleCheck:Super,Admin'],'prefix'=>'dashboar
     Route::resource('/guest',GuestController::class);
     Route::resource('/room',RoomController::class);
     Route::resource('/register',RegisterGuestController::class)->except(['destroy']);
-    Route::get('/reserve',[ReservationController::class,'index'])->name('reserve');
-    Route::get('/reserve/create',[ReservationController::class,'create']);
-    Route::post('/reserve',[ReservationController::class,'store']);
+    Route::resource('/reserve',ReservationController::class)->except(['show']);
+
 
 });

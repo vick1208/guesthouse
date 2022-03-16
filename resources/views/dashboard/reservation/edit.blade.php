@@ -3,17 +3,18 @@
 
 @section('container')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Reservation Guest</h1>
+    <h1 class="h2">Edit Reservation</h1>
 </div>
 
 <div class="col-lg-8">
-    <form action="/dashboard/reserve" method="post" class="mb-5">
+    <form action="/dashboard/reserve/{{ $reservation->id }}" method="post" class="mb-5">
+        @method('put')
         @csrf
         <div class="mb-3">
             <label for="room" class="form-label">Room</label>
             <select class="form-select" name="room_id">
                @foreach ( $rooms as $room)
-                @if (old('room_id')== $room->id)
+                @if (old('room_id',$reservation->room->id)== $room->id)
                 <option value="{{ $room->id }}" selected>{{ $room->number }}</option>
                 @else
                 <option value="{{ $room->id }}">{{ $room->number }}</option>
@@ -25,7 +26,7 @@
             <label for="guest" class="form-label">Guest</label>
             <select class="form-select" name="guest_id">
                @foreach ( $guests as $guest)
-                @if (old('guest_id')== $guest->id)
+                @if (old('guest_id',$reservation->guest->id)== $guest->id)
                 <option value="{{ $guest->id }}" selected>{{ $guest->name }}</option>
                 @else
                 <option value="{{ $guest->id }}">{{ $guest->name }}</option>
@@ -37,7 +38,7 @@
             <label for="check_in" class="form-label">Check In Date</label>
             <input type="date" class="form-control @error('check_in')
             is-invalid
-            @enderror" name="check_in" id="check_in" value="{{ old('check_in') }}">
+            @enderror" name="check_in" id="check_in" value="{{ old('check_in',$reservation->check_in)}}">
             @error('check_in')
                 <div class="invalid-feedback">
                     {{ $message }}
@@ -48,7 +49,7 @@
             <label for="check_out" class="form-label">Check Out Date</label>
             <input type="date" class="form-control @error('check_out')
             is-invalid
-            @enderror" name="check_out" id="check_out" value="{{ old('check_out') }}">
+            @enderror" name="check_out" id="check_out" value="{{ old('check_out',$reservation->check_out) }}">
             @error('check_out')
                 <div class="invalid-feedback">
                     {{ $message }}
@@ -58,7 +59,7 @@
         <div class="mb-3">
             <label for="reserved_by" class="form-label">Reservasi dari</label>
             <input type="text" class="form-control @error('reserved_by') is-invalid @enderror" id="reserved_by" name="reserved_by"
-                value="{{ old('reserved_by') }}">
+                value="{{ old('reserved_by',$reservation->reserved_by) }}">
             @error('reserved_by')
                 <div class="invalid-feedback">
                     {{ $message }}
@@ -68,7 +69,7 @@
         <div class="mb-3">
             <label for="status" class="form-label">Status Reservasi</label>
             <input type="text" class="form-control @error('status') is-invalid @enderror" id="status" name="status"
-                value="{{ old('status') }}">
+                value="{{ old('status',$reservation->status) }}">
             @error('status')
                 <div class="invalid-feedback">
                     {{ $message }}
@@ -77,7 +78,7 @@
         </div>
 
 
-        <button type="submit" class="btn btn-primary">Create Reservation</button>
+        <button type="submit" class="btn btn-warning">Update Reservation</button>
 
 
     </form>
