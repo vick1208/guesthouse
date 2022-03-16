@@ -7,7 +7,7 @@
             <div class="col-lg-8">
 
 
-                <a href="/dashboard/guest" class="btn btn-success"><span data-feather="arrow-left"></span>Guests List</a>
+                <a href="/dashboard/guest" class="btn btn-success"><span data-feather="arrow-left"></span>Guests Record</a>
                 <a href="/dashboard/guest/{{ $guest->id }}/edit" class="btn btn-warning"><span
                         data-feather="edit"></span>Edit</a>
 

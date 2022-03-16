@@ -32,7 +32,7 @@ class UserController extends Controller
     public function create()
     {
         return view('dashboard.user.create', [
-            'roles' => ['Super', 'Admin', 'Guest']
+            'roles' => ['Super', 'Admin']
         ]);
     }
 
@@ -81,7 +81,7 @@ class UserController extends Controller
     {
         return view('dashboard.user.edit', [
             'user' => $user,
-            'roles' => ['Super', 'Admin', 'Guest']
+            'roles' => ['Super', 'Admin']
         ]);
     }
 

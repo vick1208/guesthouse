@@ -8,7 +8,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link {{Request::is('/')? 'active' : '' }}" aria-current="page" href="/">Home</a>
+                    <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" aria-current="page" href="/">Home</a>
                 </li>
 
             </ul>
@@ -22,30 +22,25 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                            @if (auth()->user()->role === "Super" || auth()->user()->role === "Admin")
-                            <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-window"></i>Dashboard Hotel</a>
-                            </li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            @endif
-                            @if (auth()->user()->role === "Guest")
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            @endif
 
+                            <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-window"></i>Dashboard
+                                    Hotel</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
                             <li>
                                 <form action="/logout" method="post">
                                     @csrf
-                                    <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-right"></i>Logout</button>
+                                    <button type="submit" class="dropdown-item"><i
+                                            class="bi bi-box-arrow-right"></i>Logout</button>
                                 </form>
                             </li>
                         </ul>
                     </li>
                 @else
                     <li class="nav-item">
-                        <a class="nav-link {{Request::is('login')? 'active' : '' }}" href="/login"><i
+                        <a class="nav-link {{ Request::is('login') ? 'active' : '' }}" href="/login"><i
                                 class="bi bi-box-arrow-in-right"></i>
                             Admin Login</a>
                     </li>

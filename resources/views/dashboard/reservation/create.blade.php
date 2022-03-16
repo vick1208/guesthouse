@@ -65,6 +65,16 @@
                 </div>
             @enderror
         </div>
+        <div class="mb-3">
+            <label for="status" class="form-label">Status Reservasi</label>
+            <input type="text" class="form-control @error('status') is-invalid @enderror" id="status" name="status"
+                value="{{ old('status') }}">
+            @error('status')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
+        </div>
 
 
         <button type="submit" class="btn btn-primary">Reservation</button>

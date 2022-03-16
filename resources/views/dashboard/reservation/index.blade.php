@@ -16,7 +16,7 @@
     </div>
 
     <div class="table-responsive col-lg-19 border-top my-5">
-        <h5 class="text-center my-3">Reservation History</h5>
+        {{-- <h5 class="text-center my-3">Reservation History</h5> --}}
         @if (session()->has('success'))
             <div class="alert alert-success" role="alert">
                 {{ session('success') }}

@@ -21,7 +21,16 @@ class ReservationController extends Controller
 
     public function store(Request $request)
     {
-        return redirect(route('reserve'));
+        $validdata = $request->validate(
+            [
+                "room_id" => 'required',
+                "guest_id" => 'required',
+                "check_in" => 'required|date',
+                "check_out" => 'required|date',
+            ]
+            );
+
+        return redirect("/dashboard/reserve");
     }
 
 
