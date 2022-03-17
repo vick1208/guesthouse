@@ -2,8 +2,11 @@
 
 namespace App\Models;
 
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Helpers\Helper;
+use Carbon\Carbon;
 
 class Reservation extends Model
 {
@@ -25,4 +28,5 @@ class Reservation extends Model
     {
         return $this->belongsTo(Room::class);
     }
+
 }

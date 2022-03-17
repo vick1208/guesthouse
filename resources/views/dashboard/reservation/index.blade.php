@@ -51,13 +51,7 @@
                         <td>
                             <a href="/dashboard/reserve/{{ $res->id }}/edit" class="badge bg-warning"><span
                                 data-feather="edit"></span></a>
-                            <form action="/dashboard/reserve/{{ $res->id }}" method="POST" class="d-inline">
-                                    @method('delete')
-                                    @csrf
-                                    <button class="badge bg-danger border-0"
-                                        onclick="return confirm('Apakah Anda Ingin Menghapus?')"><span
-                                            data-feather="x-octagon"></span></button>
-                                </form>
+
                         </td>
                     </tr>
                 @empty

@@ -32,14 +32,20 @@
                 </a>
             </li>
 
+            <li class="border-top my-2"></li>
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard/register*')? 'active' : '' }}" href="/dashboard/register">
                     <span data-feather="user"></span>
                     Register Guest
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('dashboard/trareg*')? 'active' : '' }}" href="/dashboard/trareg">
+                    <span data-feather="dollar-sign"></span>
+                    Transaction Register
+                </a>
+            </li>
 
-            <li class="border-top my-2"></li>
 
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard/reserve*')? 'active' : '' }}" href="/dashboard/reserve">
