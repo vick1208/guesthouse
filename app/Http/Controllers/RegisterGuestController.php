@@ -87,8 +87,8 @@ class RegisterGuestController extends Controller
         return view('dashboard.register.edit',[
             'register'=> RegisterGuest::find($id),
             'guests' => Guest::all(),
-            'rooms' => Room::all()
-            // 'roomstatuses'=>RoomStatus::all()
+            'rooms' => Room::all(),
+            'roomstatuses'=>RoomStatus::all()
         ]);
     }
 
@@ -101,6 +101,7 @@ class RegisterGuestController extends Controller
      */
     public function update(Request $request, $id)
     {
+        @dd($request);
 
         $valid = $request->validate(
             [
@@ -112,6 +113,8 @@ class RegisterGuestController extends Controller
             ]
         );
         $valid['user_id'] = auth()->user()->id;
+
+
         RegisterGuest::where('id',$id)->update($valid);
 
         return redirect('/dashboard/register')->with('success', 'Data register telah diubah.');

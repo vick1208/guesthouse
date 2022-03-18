@@ -22,20 +22,7 @@
                     @endforeach
                 </select>
             </div>
-            <div class="mb-3">
-                <label for="room_status" class="form-label">Status Kamar</label>
-                <select class="form-select" name="room_status">
-                    @foreach ($roomstatuses as $ro)
-                        @if (old('room_status', $register->room->room_status_id) == $ro->id)
-                            <option value="{{ $room->roomStatus->id }}" selected>{{ $room->roomStatus->name }}
-                            </option>
-                        @else
-                            <option value="{{ $ro->id }}">{{ $ro->name }}</option>
-                        @endif
-                    @endforeach
 
-                </select>
-            </div>
             <div class="mb-3">
                 <label for="guest" class="form-label">Tamu</label>
                 <select class="form-select" name="guest_id">
