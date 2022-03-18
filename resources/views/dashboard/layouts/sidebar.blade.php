@@ -39,18 +39,18 @@
                     Register Guest
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link {{ Request::is('dashboard/trareg*')? 'active' : '' }}" href="/dashboard/trareg">
-                    <span data-feather="dollar-sign"></span>
-                    Transaction Register
-                </a>
-            </li>
 
 
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard/reserve*')? 'active' : '' }}" href="/dashboard/reserve">
                     <span data-feather="book-open"></span>
                     Reservation Room
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('dashboard/transaction*')? 'active' : '' }}" href="/dashboard/transaction">
+                    <span data-feather="dollar-sign"></span>
+                    Transaction
                 </a>
             </li>
         </ul>

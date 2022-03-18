@@ -88,7 +88,7 @@ class RegisterGuestController extends Controller
             'register'=> RegisterGuest::find($id),
             'guests' => Guest::all(),
             'rooms' => Room::all(),
-            'roomstatuses'=>RoomStatus::all()
+
         ]);
     }
 
@@ -101,7 +101,7 @@ class RegisterGuestController extends Controller
      */
     public function update(Request $request, $id)
     {
-        @dd($request);
+        // @dd($request);
 
         $valid = $request->validate(
             [
