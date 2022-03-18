@@ -25,8 +25,8 @@
                 <div class="modal-body">
                     <div class="d-flex justify-content-center">
                         <a class="btn btn-sm btn-primary m-1" href="/dashboard/transaction/checkin">Check In</a>
-                        <a class="btn btn-sm btn-primary m-1" href="/dashboard/transaction/checkout">Check Out</a>
-                        <a class="btn btn-sm btn-danger m-1" href="/dashboard/transaction/overdue">Over Due</a>
+                        <a class="btn btn-sm btn-danger m-1" href="/dashboard/transaction/checkout">Check Out</a>
+
                     </div>
                 </div>
                 <div class="modal-footer">
