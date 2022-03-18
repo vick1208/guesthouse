@@ -25,7 +25,7 @@
                 <div class="modal-body">
                     <div class="d-flex justify-content-center">
                         <a class="btn btn-sm btn-primary m-1" href="/dashboard/transaction/checkin">Check In</a>
-                        <a class="btn btn-sm btn-warning m-1" href="/dashboard/transaction/checkout">Check Out</a>
+                        <a class="btn btn-sm btn-primary m-1" href="/dashboard/transaction/checkout">Check Out</a>
                         <a class="btn btn-sm btn-danger m-1" href="/dashboard/transaction/overdue">Over Due</a>
                     </div>
                 </div>
@@ -46,8 +46,9 @@
                 </div>
                 <div class="modal-body">
                     <div class="d-flex justify-content-center">
-                        <a class="btn btn-sm btn-success m-1" href="/dashboard/transaction/dp">Down Payment</a>
-                        <a class="btn btn-sm btn-danger m-1" href="/dashboard/transaction/cancel">Cancel</a>
+                        <a class="btn btn-sm btn-primary m-1" href="/dashboard/transaction/dp">Down Payment</a>
+                        <a class="btn btn-sm btn-primary m-1" href="/dashboard/transaction/ad">Adv. Deposit</a>
+                        <a class="btn btn-sm btn-danger m-1" href="/dashboard/transaction/refund">Refund</a>
                     </div>
                 </div>
                 <div class="modal-footer">

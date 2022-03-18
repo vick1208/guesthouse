@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Guest;
 use App\Models\RegisterGuest;
 use App\Models\Room;
-use App\Models\RoomStatus;
 use Illuminate\Http\Request;
 
 class RegisterGuestController extends Controller
@@ -54,7 +53,7 @@ class RegisterGuestController extends Controller
         );
         $valid['user_id'] = auth()->user()->id;
 
-        Room::find($valid['room_id'])->update(['room_status_id'=>"2"]);
+        // Room::find($valid['room_id'])->update(['room_status_id'=>"2"]);
 
         RegisterGuest::create($valid);
 
