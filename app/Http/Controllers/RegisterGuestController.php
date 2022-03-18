@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Guest;
 use App\Models\RegisterGuest;
 use App\Models\Room;
+use App\Models\RoomStatus;
 use Illuminate\Http\Request;
 
 class RegisterGuestController extends Controller
@@ -53,7 +54,10 @@ class RegisterGuestController extends Controller
         );
         $valid['user_id'] = auth()->user()->id;
 
+        Room::find($valid['room_id'])->update(['room_status_id'=>"2"]);
+
         RegisterGuest::create($valid);
+
 
         return redirect('/dashboard/register')->with('success','Guest telah diregistrasi');
     }
@@ -84,6 +88,7 @@ class RegisterGuestController extends Controller
             'register'=> RegisterGuest::find($id),
             'guests' => Guest::all(),
             'rooms' => Room::all()
+            // 'roomstatuses'=>RoomStatus::all()
         ]);
     }
 
@@ -122,6 +127,7 @@ class RegisterGuestController extends Controller
      */
     public function destroy($id)
     {
+        // Room::find($id)->where('name',$guest->name)->update(['room_status_id'=>"7"]);
         RegisterGuest::destroy($id);
         return redirect('/dashboard/register')->with('success', 'Guest telah dihapus.');
     }
