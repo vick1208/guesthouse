@@ -6,9 +6,9 @@
     </div>
 
     <div class="col-lg-8">
-        <form action="/dashboard/guest" method="post" class="mb-5">
+        <form action="/dashboard/guest" method="post" class="row mb-5">
             @csrf
-            <div class="mb-3">
+            <div class="col-md-8 mb-3">
                 <label for="id_number" class="form-label">NIK/Paspor/SIM</label>
                 <input type="text" class="form-control @error('id_number') is-invalid @enderror" id="id_number" name="id_number"
                     value="{{ old('id_number') }}">
@@ -19,7 +19,7 @@
                     </div>
                 @enderror
             </div>
-            <div class="mb-3">
+            <div class="col-md-5 mb-3">
                 <label for="name" class="form-label">Nama</label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
                     value="{{ old('name') }}">
@@ -30,7 +30,7 @@
                     </div>
                 @enderror
             </div>
-            <div class="mb-3">
+            <div class="col-md-5 mb-3">
                 <label for="address" class="form-label">Alamat</label>
                 <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address"
                     value="{{ old('address') }}">
@@ -40,7 +40,7 @@
                     </div>
                 @enderror
             </div>
-            <div class="mb-3">
+            <div class="col-md-5 mb-3">
                 <label for="nationality" class="form-label">Kebangsaan</label>
                 <input type="text" class="form-control @error('nationality') is-invalid @enderror" id="nationality" name="nationality"
                     value="{{ old('nationality') }}">
@@ -63,7 +63,7 @@
             </div> --}}
 
 
-            <div class="mb-3">
+            <div class="col-md-5 mb-3">
                 <label for="gender" class="form-label">Jenis Kelamin</label>
                 <select class="form-select" name="gender">
                    @foreach ( $genders as $gender)
@@ -86,7 +86,7 @@
                     </div>
                 @enderror
             </div> --}}
-            <div class="mb-3">
+            <div class="col-md-5 mb-3">
                 <label for="birthdate" class="form-label">Tanggal Lahir</label>
                 <input type="date" class="form-control @error('birthdate')
                 is-invalid
@@ -97,7 +97,7 @@
                     </div>
                 @enderror
             </div>
-            <div class="mb-3">
+            <div class="col-md-6 mb-3">
                 <label for="job" class="form-label">Jabatan</label>
                 <input type="text" class="form-control @error('job') is-invalid @enderror" id="job" name="job"
                     value="{{ old('job') }}">
@@ -107,7 +107,10 @@
                     </div>
                 @enderror
             </div>
-            <button type="submit" class="btn btn-primary">Create Guest</button>
+            <div class="mt-2">
+                <button type="submit" class="btn btn-primary">Create Guest</button>
+
+            </div>
 
         </form>
     </div>

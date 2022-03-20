@@ -7,9 +7,9 @@
     </div>
 
     <div class="col-lg-8">
-        <form action="/dashboard/register" method="post" class="mb-5">
+        <form action="/dashboard/register" method="post" class="row mb-5">
             @csrf
-            <div class="mb-3">
+            <div class="col-md-5 mb-3">
                 <label for="room" class="form-label">Kamar</label>
                 <select class="form-select" name="room_id">
                     @foreach ($rooms as $room)
@@ -24,7 +24,7 @@
 
 
 
-            <div class="mb-3">
+            <div class="col-md-5 mb-3">
                 <label for="guest" class="form-label">Tamu</label>
                 <select class="form-select" name="guest_id">
                     @foreach ($guests as $guest)
@@ -36,7 +36,7 @@
                     @endforeach
                 </select>
             </div>
-            <div class="mb-3">
+            <div class="col-md-5 mb-3">
                 <label for="check_in" class="form-label">Tanggal <i>Check In</i> </label>
                 <input type="date" class="form-control @error('check_in') is-invalid @enderror" name="check_in"
                     id="check_in" value="{{ old('check_in') }}">
@@ -46,7 +46,7 @@
                     </div>
                 @enderror
             </div>
-            <div class="mb-3">
+            <div class="col-md-5 mb-3">
                 <label for="check_out" class="form-label">Tanggal <i>Check Out</i> </label>
                 <input type="date" class="form-control @error('check_out') is-invalid @enderror" name="check_out"
                     id="check_out" value="{{ old('check_out') }}">
@@ -66,15 +66,29 @@
                     </div>
                 @enderror
             </div> --}}
-            <div class="mb-3">
+
+            <div class="col-md-12 mb-3">
+                <label for="price" class="form-label">Price</label>
+                <input type="text" class="form-control @error('price') is-invalid @enderror" id="price"
+                    name="price" value="{{ old('price') }}">
+                @error('register_type')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+
+            {{-- <div class="mb-3">
                 <button type="button" class="btn btn-primary btn-sm
                  shadow-sm myBtn border rounded"
                     data-bs-toggle="modal" data-bs-target="#register">Transaction</button>
 
+            </div> --}}
+
+            <div class=" mt-3">
+                <button type="submit" class="btn btn-primary">Register</button>
+
             </div>
-
-
-            <button type="submit" class="btn btn-primary">Register</button>
 
 
         </form>
