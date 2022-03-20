@@ -49,7 +49,7 @@ class RegisterGuestController extends Controller
                 "guest_id" => 'required',
                 "check_in" => 'required|date',
                 "check_out" => 'required|date',
-
+                "register_type" => 'required'
             ]
         );
         $valid['user_id'] = auth()->user()->id;
@@ -87,7 +87,8 @@ class RegisterGuestController extends Controller
         return view('dashboard.register.edit',[
             'register'=> RegisterGuest::find($id),
             'guests' => Guest::all(),
-            'rooms' => Room::all()
+            'rooms' => Room::all(),
+            'statuses' => RoomStatus::all()
 
         ]);
     }
@@ -121,6 +122,7 @@ class RegisterGuestController extends Controller
             $room->room_status_id = 2;
             $room->save();
         }
+
         return redirect('/dashboard/register')->with('success', 'Data register telah diubah.');
 
 
