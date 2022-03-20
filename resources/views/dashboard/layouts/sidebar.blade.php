@@ -47,12 +47,7 @@
                     Reservation Room
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link {{ Request::is('dashboard/transaction*')? 'active' : '' }}" href="/dashboard/transaction">
-                    <span data-feather="dollar-sign"></span>
-                    Transaction
-                </a>
-            </li>
+
         </ul>
     </div>
 </nav>

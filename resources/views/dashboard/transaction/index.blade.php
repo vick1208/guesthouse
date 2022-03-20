@@ -14,27 +14,7 @@
 
 
 </div>
-<div class="modal fade" id="register" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Register Transaction</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="d-flex justify-content-center">
-                        <a class="btn btn-sm btn-primary m-1" href="/dashboard/transaction/checkin">Check In</a>
-                        <a class="btn btn-sm btn-danger m-1" href="/dashboard/transaction/checkout">Check Out</a>
 
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div class="modal fade" id="reserve" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -46,7 +26,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="d-flex justify-content-center">
-                        <a class="btn btn-sm btn-primary m-1" href="/dashboard/transaction/dp">Down Payment</a>
+                        {{-- <a class="btn btn-sm btn-primary m-1" href="/dashboard/transaction/dp">Down Payment</a> --}}
                         <a class="btn btn-sm btn-primary m-1" href="/dashboard/transaction/ad">Adv. Deposit</a>
                         <a class="btn btn-sm btn-danger m-1" href="/dashboard/transaction/refund">Refund</a>
                     </div>
