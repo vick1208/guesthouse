@@ -67,7 +67,7 @@
                 @enderror
             </div> --}}
 
-            <div class="mb-3">
+            <div class="col-md-8 mb-3">
                 <label for="register_type" class="form-label">Tipe Registrasi</label>
                 <input type="text" class="form-control @error('register_type') is-invalid @enderror" id="register_type"
                     name="register_type" value="{{ old('register_type') }}">
