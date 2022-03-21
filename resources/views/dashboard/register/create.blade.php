@@ -21,18 +21,6 @@
                     @endforeach
                 </select>
             </div>
-            <div class="col-md-12 mb-3">
-                <label for="price" class="form-label">Harga</label>
-                <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" id="price" name="price"
-                    value="{{ old('price') }}">
-
-                @error('price')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-
 
             <div class="col-md-5 mb-3">
                 <label for="guest" class="form-label">Tamu</label>
@@ -66,7 +54,20 @@
                     </div>
                 @enderror
             </div>
-            {{-- <div class="mb-3">
+
+            {{-- <div class="col-md-12 mb-3">
+                <label for="price" class="form-label">Harga</label>
+                <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" id="price" name="price"
+                    value="{{ old('price') }}">
+
+                @error('price')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div> --}}
+
+            <div class="mb-3">
                 <label for="register_type" class="form-label">Tipe Registrasi</label>
                 <input type="text" class="form-control @error('register_type') is-invalid @enderror" id="register_type"
                     name="register_type" value="{{ old('register_type') }}">
@@ -75,7 +76,7 @@
                         {{ $message }}
                     </div>
                 @enderror
-            </div> --}}
+            </div>
 
 
 
@@ -95,7 +96,7 @@
         </form>
     </div>
 
-    <div class="modal fade" id="register" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    {{-- <div class="modal fade" id="register" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -105,8 +106,8 @@
                 </div>
                 <div class="modal-body">
                     <div class="d-flex justify-content-center">
-                        {{-- <a class="btn btn-sm btn-primary m-1" href="/dashboard/transaction/checkin">Check In</a>
-                        <a class="btn btn-sm btn-danger m-1" href="/dashboard/transaction/checkout">Check Out</a> --}}
+                        <a class="btn btn-sm btn-primary m-1" href="/dashboard/transaction/checkin">Check In</a>
+                        <a class="btn btn-sm btn-danger m-1" href="/dashboard/transaction/checkout">Check Out</a>
                         <a class="btn btn-sm btn-primary m-1" href="/dashboard/transaction">Price</a>
                     </div>
                 </div>
@@ -115,5 +116,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection
