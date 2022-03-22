@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             // GuestSeeder::class
             TypeSeeder::class,
             RoomStatusSeeder::class,
-            RoomSeeder::class
+            // RoomSeeder::class
 
         ]);
     }

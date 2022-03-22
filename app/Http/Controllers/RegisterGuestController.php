@@ -145,4 +145,13 @@ class RegisterGuestController extends Controller
         // RegisterGuest::destroy($id);
         return redirect('/dashboard/register')->with('success', 'Guest telah dihapus.');
     }
+
+
+    public function getRoom(Request $request){
+
+        $model = new Room();
+        $data = $model->find($request->id);
+
+        return response()->json(['data'=>$data]);
+    }
 }

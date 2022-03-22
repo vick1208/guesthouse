@@ -11,7 +11,7 @@
             @csrf
             <div class="col-md-5 mb-3">
                 <label for="room" class="form-label">Kamar</label>
-                <select class="form-select" name="room_id">
+                <select class="form-select" name="room_id" id="room_id">
                     @foreach ($rooms as $room)
                         @if (old('room_id') == $room->id)
                             <option value="{{ $room->id }}" selected>{{ $room->number }}</option>
@@ -55,17 +55,17 @@
                 @enderror
             </div>
 
-            {{-- <div class="col-md-12 mb-3">
+            <div class="col-md-12 mb-3">
                 <label for="price" class="form-label">Harga</label>
                 <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" id="price" name="price"
-                    value="{{ $rooms->id }}">
+                    value="{{ old('price') }}">
 
                 @error('price')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
                 @enderror
-            </div> --}}
+            </div>
 
             <div class="col-md-8 mb-3">
                 <label for="register_type" class="form-label">Tipe Registrasi</label>
@@ -78,43 +78,22 @@
                 @enderror
             </div>
 
-
-
-            {{-- <div class="mb-3">
-                <button type="button" class="btn btn-primary btn-sm
-                 shadow-sm myBtn border rounded"
-                    data-bs-toggle="modal" data-bs-target="#register">Transaction</button>
-
-            </div> --}}
-
             <div class=" mt-3">
                 <button type="submit" class="btn btn-primary">Register</button>
 
             </div>
-
-
         </form>
     </div>
 
-    {{-- <div class="modal fade" id="register" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Register Transaction</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="d-flex justify-content-center">
-                        <a class="btn btn-sm btn-primary m-1" href="/dashboard/transaction/checkin">Check In</a>
-                        <a class="btn btn-sm btn-danger m-1" href="/dashboard/transaction/checkout">Check Out</a>
-                        <a class="btn btn-sm btn-primary m-1" href="/dashboard/transaction">Price</a>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div> --}}
+    {{-- <script>
+        const room= document.querySelector('#room_id');
+        const price= document.querySelector('#price');
+
+        room.addEventListener('change',function {
+            fetch('/dashboard/register/room?room_id=' + room.value)
+                .then(response => response.json())
+                .then(data => price.value = data.price)
+        })
+    </script> --}}
+
 @endsection
