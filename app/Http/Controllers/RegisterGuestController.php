@@ -147,11 +147,5 @@ class RegisterGuestController extends Controller
     }
 
 
-    public function getRoom(Request $request){
 
-        $model = new Room();
-        $data = $model->find($request->id);
-
-        return response()->json(['data'=>$data]);
-    }
 }

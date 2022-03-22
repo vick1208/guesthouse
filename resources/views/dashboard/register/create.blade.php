@@ -85,15 +85,6 @@
         </form>
     </div>
 
-    {{-- <script>
-        const room= document.querySelector('#room_id');
-        const price= document.querySelector('#price');
 
-        room.addEventListener('change',function {
-            fetch('/dashboard/register/room?room_id=' + room.value)
-                .then(response => response.json())
-                .then(data => price.value = data.price)
-        })
-    </script> --}}
 
 @endsection
