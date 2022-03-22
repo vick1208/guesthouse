@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Guest;
 use App\Models\RegisterGuest;
 use App\Models\Room;
-use App\Models\RoomStatus;
 use Illuminate\Http\Request;
 
 class RegisterGuestController extends Controller
@@ -87,8 +86,7 @@ class RegisterGuestController extends Controller
         return view('dashboard.register.edit',[
             'register'=> RegisterGuest::find($id),
             'guests' => Guest::all(),
-            'rooms' => Room::all(),
-            'statuses' => RoomStatus::all()
+            'rooms' => Room::all()
 
         ]);
     }
