@@ -1,6 +1,20 @@
 @extends('dashboard.layouts.main')
 
 @section('container')
+    {{-- <script>
+        $('#room_id')
+            .change(function () {
+            var str = "";
+            var value = "";
+            $( "select option:selected" ).each(function() {
+                str = $( this ).text() + " ";
+                value = $(this).value();
+            });
+            alert(value);
+            })
+            .change();
+    </script> --}}
+
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Edit Register</h1>
     </div>
@@ -11,7 +25,7 @@
             @csrf
             <div class="mb-3">
                 <label for="room" class="form-label">Kamar</label>
-                <select class="form-select" name="room_id">
+                <select class="form-select" name="room_id" id="room_id">
                     @foreach ($rooms as $room)
                         @if (old('room_id', $register->room->id) == $room->id)
                             <option value="{{ $room->id }}" selected>{{ $room->number }}</option>
@@ -21,6 +35,7 @@
                         @endif
                     @endforeach
                 </select>
+
             </div>
 
 
