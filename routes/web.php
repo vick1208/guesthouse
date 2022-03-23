@@ -7,6 +7,7 @@ use App\Http\Controllers\RegisterGuestController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\UserController;
+use App\Models\RegisterGuest;
 use App\Models\Reservation;
 
 /*
@@ -46,6 +47,7 @@ Route::group(['middleware'=>['auth','roleCheck:Super,Admin'],'prefix'=>'dashboar
     });
     Route::resource('/guest',GuestController::class);
     Route::resource('/room',RoomController::class);
+    Route::get('/register/room',[RegisterGuestController::class,'getRoom']);
     Route::resource('/register',RegisterGuestController::class);
     Route::resource('/reserve',ReservationController::class)->except(['show','destroy']);
     // Route::get('/transaction',function(){

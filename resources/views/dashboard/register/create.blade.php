@@ -12,11 +12,12 @@
             <div class="col-md-5 mb-3">
                 <label for="room" class="form-label">Kamar</label>
                 <select class="form-select" name="room_id" id="room_id">
+                    <option value="-1" selected disabled>Nomor Kamar</option>
                     @foreach ($rooms as $room)
                         @if (old('room_id') == $room->id)
-                            <option value="{{ $room->id }}" selected>{{ $room->number }}</option>
-                        @else
                             <option value="{{ $room->id }}">{{ $room->number }}</option>
+                        @else
+                            <option value="{{ $room->id }}" >{{ $room->number }}</option>
                         @endif
                     @endforeach
                 </select>
@@ -25,6 +26,7 @@
             <div class="col-md-5 mb-3">
                 <label for="guest" class="form-label">Tamu</label>
                 <select class="form-select" name="guest_id">
+                    <option value="-1" selected disabled>Nama Tamu</option>
                     @foreach ($guests as $guest)
                         @if (old('guest_id') == $guest->id)
                             <option value="{{ $guest->id }}" selected>{{ $guest->name }}</option>
@@ -57,8 +59,8 @@
 
             <div class="col-md-12 mb-3">
                 <label for="price" class="form-label">Harga</label>
-                <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" id="price" name="price"
-                    value="{{ old('price') }}">
+                <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" id="price"
+                    name="price" value="{{ old('price') }}">
 
                 @error('price')
                     <div class="invalid-feedback">
@@ -85,6 +87,23 @@
         </form>
     </div>
 
+    <script src="{{ asset('js/app.js') }}"></script>
 
+    <script>
 
+        $('#room_id').on('change',(event)=>{
+            // console.log(event);
+            room(event.target.value).then(room => {
+                $('#price').val(room.price);
+            });
+        })
+
+        async function room(id){
+            let response = await fetch('room?id='+id)
+            let data = await response.json();
+
+            return data;
+        }
+
+    </script>
 @endsection
