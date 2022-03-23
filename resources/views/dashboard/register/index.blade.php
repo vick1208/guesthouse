@@ -29,6 +29,7 @@
                     <th scope="col">Tipe Registrasi</th>
                     <th scope="col">Check in</th>
                     <th scope="col">Check out</th>
+                    <th scope="col">Harga Kamar</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -41,6 +42,7 @@
                         <td>{{ $reg->register_type }}</td>
                         <td>{{ $reg->check_in }}</td>
                         <td>{{ $reg->check_out }}</td>
+                        <td>{{ $reg->room->price }}</td>
                         <td>
                             <a href="/dashboard/register/{{ $reg->id }}" class="badge bg-info"><span
                                     data-feather="eye"></span></a>

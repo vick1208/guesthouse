@@ -57,7 +57,7 @@
                 @enderror
             </div>
 
-            <div class="col-md-12 mb-3">
+            <div class="col-md-6 mb-3">
                 <label for="price" class="form-label">Harga</label>
                 <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" id="price"
                     name="price" value="{{ old('price') }}">
@@ -69,7 +69,7 @@
                 @enderror
             </div>
 
-            <div class="col-md-8 mb-3">
+            <div class="col-md-6 mb-3">
                 <label for="register_type" class="form-label">Tipe Registrasi</label>
                 <input type="text" class="form-control @error('register_type') is-invalid @enderror" id="register_type"
                     name="register_type" value="{{ old('register_type') }}">
