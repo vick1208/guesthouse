@@ -111,7 +111,7 @@
         })
 
         async function room(id){
-            let response = await fetch('{room?id='+id)
+            let response = await fetch('room?id='+id)
             let data = await response.json();
 
             return data;
