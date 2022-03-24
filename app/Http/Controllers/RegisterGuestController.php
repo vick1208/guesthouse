@@ -7,8 +7,10 @@ use App\Models\RegisterGuest;
 use App\Models\Room;
 use Illuminate\Http\Request;
 
+
 class RegisterGuestController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -42,6 +44,7 @@ class RegisterGuestController extends Controller
      */
     public function store(Request $request)
     {
+
         $valid = $request->validate(
             [
                 "room_id" => 'required',

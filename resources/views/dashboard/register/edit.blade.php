@@ -20,10 +20,10 @@
     </div>
 
     <div class="col-lg-8">
-        <form action="/dashboard/register/{{ $register->id }}" method="post" class="mb-5">
+        <form action="/dashboard/register/{{ $register->id }}" method="post" class="row mb-5">
             @method('put')
             @csrf
-            <div class="mb-3">
+            <div class="col-md-5 mb-3">
                 <label for="room" class="form-label">Kamar</label>
                 <select class="form-select" name="room_id" id="room_id">
                     @foreach ($rooms as $room)
@@ -40,7 +40,7 @@
 
 
 
-            <div class="mb-3">
+            <div class="col-md-5 mb-3">
                 <label for="guest" class="form-label">Tamu</label>
                 <select class="form-select" name="guest_id">
                     @foreach ($guests as $guest)
@@ -52,7 +52,7 @@
                     @endforeach
                 </select>
             </div>
-            <div class="mb-3">
+            <div class="col-md-5 mb-3">
                 <label for="check_in" class="form-label">Tanggal <i>Check In</i></label>
                 <input type="date" class="form-control @error('check_in') is-invalid @enderror" name="check_in"
                     id="check_in" value="{{ old('check_in', $register->check_in) }}">
@@ -62,7 +62,7 @@
                     </div>
                 @enderror
             </div>
-            <div class="mb-3">
+            <div class="col-md-5 mb-3">
                 <label for="check_out" class="form-label">Tanggal <i>Check Out</i></label>
                 <input type="date" class="form-control @error('check_out') is-invalid @enderror" name="check_out"
                     id="check_out" value="{{ old('check_out', $register->check_out) }}">
@@ -72,7 +72,20 @@
                     </div>
                 @enderror
             </div>
-            <div class="mb-3">
+
+            <div class="col-md-6 mb-3">
+                <label for="price" class="form-label">Harga</label>
+                <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" id="price"
+                    name="price" value="{{ old('price',$register->room->price) }}">
+
+                @error('price')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+
+            <div class="col-md-6 mb-3">
                 <label for="register_type" class="form-label">Tipe Registrasi</label>
                 <input type="text" class="form-control @error('register_type') is-invalid @enderror" id="register_type"
                     name="register_type" value="{{ old('register_type', $register->register_type) }}">
@@ -86,4 +99,23 @@
             <button type="submit" class="btn btn-warning">Update</button>
         </form>
     </div>
+
+    <script src="{{ asset('js/app.js') }}"></script>
+    {{-- <script>
+
+        $('#room_id').on('change',(event)=>{
+            // console.log(event);
+            room(event.target.value).then(room => {
+                $('#price').val(room.price);
+            });
+        })
+
+        async function room(id){
+            let response = await fetch('{room?id='+id)
+            let data = await response.json();
+
+            return data;
+        }
+
+    </script> --}}
 @endsection

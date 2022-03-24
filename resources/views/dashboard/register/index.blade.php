@@ -40,8 +40,8 @@
                         <td>{{ $reg->guest->name }} </td>
                         <td>{{ $reg->room->number }}</td>
                         <td>{{ $reg->register_type }}</td>
-                        <td>{{ $reg->check_in }}</td>
-                        <td>{{ $reg->check_out }}</td>
+                        <td>{{ \Carbon\Carbon::parse($reg->check_in)->isoFormat('D MMM YYYY') }}</td>
+                        <td>{{ \Carbon\Carbon::parse($reg->check_out)->isoFormat('D MMM YYYY') }}</td>
                         <td>{{ $reg->room->price }}</td>
                         <td>
                             <a href="/dashboard/register/{{ $reg->id }}" class="badge bg-info"><span
