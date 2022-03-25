@@ -104,13 +104,15 @@
     {{-- <script>
 
         $('#room_id').on('change',(event)=>{
-            // console.log(event);
+            console.log(event);
             room(event.target.value).then(room => {
                 $('#price').val(room.price);
             });
         })
 
-        async function room(id){
+        async function room(id,room){
+
+            room = $('#room_id');
             let response = await fetch('room?id='+id)
             let data = await response.json();
 
