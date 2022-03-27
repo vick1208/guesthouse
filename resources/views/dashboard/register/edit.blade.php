@@ -110,9 +110,9 @@
             });
         })
 
-        async function room(id){
+        async function room(){
 
-            room = $('#room_id');
+
             let response = await fetch('room?id='+id)
             let data = await response.json();
 
