@@ -110,7 +110,7 @@
             });
         })
 
-        async function room(){
+        async function room(id){
 
 
             let response = await fetch('room?id='+id)
