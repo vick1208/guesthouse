@@ -101,7 +101,7 @@
     </div>
 
     <script src="{{ asset('js/app.js') }}"></script>
-    <script>
+    {{-- <script>
 
         $('#room_id').on('change',(event)=>{
             console.log(event);
@@ -119,5 +119,5 @@
             return data;
         }
 
-    </script>
+    </script> --}}
 @endsection

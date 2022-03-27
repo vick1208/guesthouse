@@ -35,7 +35,7 @@ class RoomFactory extends Factory
             'type_id' => Type::all()->random()->id,
             'room_status_id' => '1',
             'number' => $order++,
-            'capacity' => $this->faker->numberBetween(1,9),
+            'capacity' => $this->faker->numberBetween(1,5),
             'price' => $this->faker->randomElement($price),
             'view' => $this->faker->paragraph(35)
         ];

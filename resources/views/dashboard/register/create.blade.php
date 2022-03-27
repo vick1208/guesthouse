@@ -35,8 +35,6 @@
                         @endif
                     @endforeach
                 </select> --}}
-
-                <label for="name" class="form-label">Nama</label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
                     value="{{ old('name') }}">
 
@@ -45,6 +43,10 @@
                         {{ $message }}
                     </div>
                 @enderror
+            </div>
+            <div class="col-md-2 mt-3">
+                <button type="button" class="btn btn-outline-primary">Guest List</button>
+
             </div>
             <div class="col-md-5 mb-3">
                 <label for="check_in" class="form-label">Tanggal <i>Check In</i> </label>
