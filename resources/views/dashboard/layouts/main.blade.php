@@ -28,6 +28,11 @@
     }
 </style>
 
+
+<script src="{{ asset('js/app.js') }}" defer></script>
+
+
+@livewireStyles
 </head>
 
 <body>
@@ -54,7 +59,7 @@
     </script>
     <script src="/js/dashboard.js"></script>
 
-
+    @livewireScripts
 
 </body>
 
