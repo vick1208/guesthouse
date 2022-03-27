@@ -54,7 +54,7 @@ class GuestController extends Controller
         $valid['user_id'] = auth()->user()->id;
 
         Guest::create($valid);
-        return redirect('/dashboard/guest')->with('success', 'Data Guest ditambahkan.');
+        return redirect('/dashboard/register');
     }
 
     /**
@@ -128,3 +128,5 @@ class GuestController extends Controller
         return redirect('/dashboard/guest')->with('success', 'Guest telah dihapus.');
     }
 }
+
+

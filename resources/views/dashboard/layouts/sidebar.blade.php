@@ -26,9 +26,9 @@
 
 
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('dashboard/guest*')? 'active' : '' }}" href="/dashboard/guest">
+            <a class="nav-link {{ Request::is('dashboard/guest*')? 'active' : '' }}" href="/dashboard/guest">
                     <span data-feather="book"></span>
-                    Guest Record
+                    Guest History
                 </a>
             </li>
 

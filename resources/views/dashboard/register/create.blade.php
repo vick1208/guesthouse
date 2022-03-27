@@ -25,7 +25,7 @@
 
             <div class="col-md-5 mb-3">
                 <label for="guest" class="form-label">Tamu</label>
-                <select class="form-select" name="guest_id">
+                {{-- <select class="form-select" name="guest_id">
                     <option value="-1" selected disabled>Nama Tamu</option>
                     @foreach ($guests as $guest)
                         @if (old('guest_id') == $guest->id)
@@ -34,7 +34,17 @@
                             <option value="{{ $guest->id }}">{{ $guest->name }}</option>
                         @endif
                     @endforeach
-                </select>
+                </select> --}}
+
+                <label for="name" class="form-label">Nama</label>
+                <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
+                    value="{{ old('name') }}">
+
+                @error('name')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
             <div class="col-md-5 mb-3">
                 <label for="check_in" class="form-label">Tanggal <i>Check In</i> </label>

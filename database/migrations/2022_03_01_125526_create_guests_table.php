@@ -15,14 +15,12 @@ return new class extends Migration
     {
         Schema::create('guests', function (Blueprint $table) {
             $table->id();
-            $table->string('id_number')->unique();
             $table->string('name');
             $table->string('address');
             $table->string('nationality');
             $table->enum('gender',['Pria', 'Wanita']);
             $table->string('job');
             $table->date('birthdate');
-            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }

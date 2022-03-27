@@ -73,20 +73,16 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Guest has been recorded?</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">Apakah tamu sudah pernah <i>booking</i> kamar?</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="d-flex justify-content-center">
-                        <a class="btn btn-sm btn-primary m-1" href="/dashboard/guest/create">No, create
-                            new guest!</a>
-                        <a class="btn btn-sm btn-success m-1" href="/dashboard/register/create">Yes, guest has been
-                            recorded!</a>
+                        <a class="btn btn-sm btn-primary m-1" href="/dashboard/guest/create">Buat tamu baru</a>
+                        <a class="btn btn-sm btn-success m-1" href="/dashboard/register/create">Tamu sudah pernah</a>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
+
             </div>
         </div>
     </div>

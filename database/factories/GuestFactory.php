@@ -20,10 +20,10 @@ class GuestFactory extends Factory
         return [
             'name' => $this->faker->name,
             'address' => $this->faker->address,
-            'gender' => $this->faker->randomElement(['Male', 'Female']),
+            'nationality' => $this->faker->country,
+            'gender' => $this->faker->randomElement(['Pria', 'Wanita']),
             'job' => $this->faker->jobTitle,
-            'birthdate' => $this->faker->date(),
-            'user_id' => User::factory()->isGuest()
+            'birthdate' => $this->faker->date()
         ];
     }
 }
