@@ -6,7 +6,7 @@ use App\Models\Guest;
 use App\Models\RegisterGuest;
 use App\Models\Room;
 use Illuminate\Http\Request;
-
+use Illuminate\Validation\ValidationException;
 
 class RegisterGuestController extends Controller
 {
@@ -63,6 +63,10 @@ class RegisterGuestController extends Controller
 
 
         return redirect('/dashboard/register')->with('success','Guest telah diregistrasi');
+
+        // throw ValidationException::withMessages([
+        //     "guest_id" => "Tamu tidak teregistrasi"
+        // ]);
     }
 
     /**

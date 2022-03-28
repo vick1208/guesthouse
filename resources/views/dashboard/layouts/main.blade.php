@@ -29,10 +29,14 @@
 </style>
 
 
-<script src="{{ asset('js/app.js') }}" defer></script>
 
+<style>
+    [x-cloak] { display: none !important; }
+    </style>
 
 @livewireStyles
+
+<script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 
 <body>

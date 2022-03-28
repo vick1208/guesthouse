@@ -9,7 +9,7 @@
     <div class="col-lg-8">
         <form action="/dashboard/register" method="post" class="row mb-5">
             @csrf
-            <div class="col-md-5 mb-3">
+            <div class="col-md-3 mb-3">
                 <label for="room" class="form-label">Kamar</label>
                 <select class="form-select" name="room_id" id="room_id">
                     <option value="-1" selected disabled>Nomor Kamar</option>
@@ -23,7 +23,7 @@
                 </select>
             </div>
 
-            <div class="col-md-5 mb-3">
+            <div class="col-md-4 mb-3">
                 <label for="guest" class="form-label">Tamu</label>
                 {{-- <select class="form-select" name="guest_id">
                     <option value="-1" selected disabled>Nama Tamu</option>
@@ -43,11 +43,14 @@
                         {{ $message }}
                     </div>
                 @enderror
-            </div>
-            <div class="col-md-2 mt-3">
-                <button type="button" class="btn btn-outline-primary">Guest List</button>
 
             </div>
+            <div class="col-md-5 mt-4">
+                <button type="button" class="btn btn-outline-primary"  data-bs-toggle="modal" data-bs-target="#guest">Tamu Lama</button>
+
+            </div>
+            <div class="w-100"></div>
+
             <div class="col-md-5 mb-3">
                 <label for="check_in" class="form-label">Tanggal <i>Check In</i> </label>
                 <input type="date" class="form-control @error('check_in') is-invalid @enderror" name="check_in"
@@ -69,7 +72,7 @@
                 @enderror
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-md-5 mb-3">
                 <label for="price" class="form-label">Harga</label>
                 <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" id="price"
                     name="price" value="{{ old('price') }}">
@@ -81,7 +84,7 @@
                 @enderror
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-md-5 mb-3">
                 <label for="register_type" class="form-label">Tipe Registrasi</label>
                 <input type="text" class="form-control @error('register_type') is-invalid @enderror" id="register_type"
                     name="register_type" value="{{ old('register_type') }}">
@@ -98,6 +101,23 @@
             </div>
         </form>
     </div>
+
+    <div class="modal fade" id="guest" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Daftar Tamu Lama</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div x-data>
+                    <livewire:guest-table/>
+
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <script src="{{ asset('js/app.js') }}"></script>
 
