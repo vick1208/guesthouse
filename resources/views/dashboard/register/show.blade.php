@@ -12,7 +12,7 @@
 
 
 
-            <h1>{{ $reg->guest->name }}</h1>
+            <h1>{{ $reg->guest_name }}</h1>
             <P>
                 {{ $reg->register_type }}
             </P>
