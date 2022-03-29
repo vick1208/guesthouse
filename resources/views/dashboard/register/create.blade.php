@@ -17,28 +17,19 @@
                         @if (old('room_id') == $room->id)
                             <option value="{{ $room->id }}">{{ $room->number }}</option>
                         @else
-                            <option value="{{ $room->id }}" >{{ $room->number }}</option>
+                            <option value="{{ $room->id }}">{{ $room->number }}</option>
                         @endif
                     @endforeach
                 </select>
             </div>
 
             <div class="col-md-4 mb-3">
-                <label for="guest" class="form-label">Tamu</label>
-                {{-- <select class="form-select" name="guest_id">
-                    <option value="-1" selected disabled>Nama Tamu</option>
-                    @foreach ($guests as $guest)
-                        @if (old('guest_id') == $guest->id)
-                            <option value="{{ $guest->id }}" selected>{{ $guest->name }}</option>
-                        @else
-                            <option value="{{ $guest->id }}">{{ $guest->name }}</option>
-                        @endif
-                    @endforeach
-                </select> --}}
-                <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
-                    value="{{ old('name') }}">
+                <label for="guest_name" class="form-label">Tamu</label>
 
-                @error('name')
+                <input type="text" class="form-control @error('guest_name') is-invalid @enderror" id="guest_name" name="guest_name"
+                    value="{{ old('guest_name') }}">
+
+                @error('guest_name')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -46,7 +37,8 @@
 
             </div>
             <div class="col-md-5 mt-4">
-                <button type="button" class="btn btn-outline-primary"  data-bs-toggle="modal" data-bs-target="#guest">Tamu Lama</button>
+                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#guest">Tamu
+                    Lama</button>
 
             </div>
             <div class="w-100"></div>
@@ -102,40 +94,39 @@
         </form>
     </div>
 
-    <div class="modal fade" id="guest" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="guest" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="staticBackdropLabel">Daftar Tamu Lama</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div x-data>
-                    <livewire:guest-table/>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Daftar Tamu Lama</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div x-data>
+                        <livewire:guest-table />
 
+                    </div>
                 </div>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
 
     <script src="{{ asset('js/app.js') }}"></script>
 
     <script>
-
-        $('#room_id').on('change',(event)=>{
+        $('#room_id').on('change', (event) => {
             // console.log(event);
             room(event.target.value).then(room => {
                 $('#price').val(room.price);
             });
         })
 
-        async function room(id){
-            let response = await fetch('room?id='+id)
+        async function room(id) {
+            let response = await fetch('room?id=' + id)
             let data = await response.json();
 
             return data;
         }
-
     </script>
 @endsection

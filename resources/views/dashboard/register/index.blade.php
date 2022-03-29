@@ -37,7 +37,7 @@
                 @forelse ($registers as $reg)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $reg->guest->name }} </td>
+                        <td>{{ $reg->guest_name }} </td>
                         <td>{{ $reg->room->number }}</td>
                         <td>{{ $reg->register_type }}</td>
                         <td>{{ \Carbon\Carbon::parse($reg->check_in)->isoFormat('D MMM YYYY') }}</td>

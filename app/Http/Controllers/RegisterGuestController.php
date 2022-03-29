@@ -31,7 +31,6 @@ class RegisterGuestController extends Controller
     public function create()
     {
         return view('dashboard.register.create', [
-            'guests' => Guest::all(),
             'rooms' => Room::all()
         ]);
     }
@@ -48,7 +47,7 @@ class RegisterGuestController extends Controller
         $valid = $request->validate(
             [
                 "room_id" => 'required',
-                "guest_id" => 'required',
+                "guest_name" => 'required',
                 "check_in" => 'required|date',
                 "check_out" => 'required|date',
                 "price" => 'required',
@@ -64,9 +63,7 @@ class RegisterGuestController extends Controller
 
         return redirect('/dashboard/register')->with('success','Guest telah diregistrasi');
 
-        // throw ValidationException::withMessages([
-        //     "guest_id" => "Tamu tidak teregistrasi"
-        // ]);
+
     }
 
     /**
@@ -113,7 +110,7 @@ class RegisterGuestController extends Controller
         $valid = $request->validate(
             [
                 "room_id" => 'required',
-                "guest_id" => 'required',
+                "guest_name" => 'required',
                 "check_in" => 'required|date',
                 "check_out" => 'required|date',
                 "register_type" => 'required'

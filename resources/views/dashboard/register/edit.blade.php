@@ -41,17 +41,24 @@
 
 
             <div class="col-md-5 mb-3">
-                <label for="guest" class="form-label">Tamu</label>
-                <select class="form-select" name="guest_id">
-                    @foreach ($guests as $guest)
-                        @if (old('guest_id', $register->guest->id) == $guest->id)
-                            <option value="{{ $guest->id }}" selected>{{ $guest->name }}</option>
-                        @else
-                            <option value="{{ $guest->id }}">{{ $guest->name }}</option>
-                        @endif
-                    @endforeach
-                </select>
+                <label for="guest_name" class="form-label">Tamu</label>
+
+                <input type="text" class="form-control @error('guest_name') is-invalid @enderror" id="guest_name" name="guest_name"
+                    value="{{ old('guest_name') }}">
+
+                @error('guest_name')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+
             </div>
+            <div class="col-md-5 mt-4">
+                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#guest">Tamu
+                    Lama</button>
+
+            </div>
+            <div class="w-100"></div>
             <div class="col-md-5 mb-3">
                 <label for="check_in" class="form-label">Tanggal <i>Check In</i></label>
                 <input type="date" class="form-control @error('check_in') is-invalid @enderror" name="check_in"
@@ -76,7 +83,7 @@
             <div class="col-md-6 mb-3">
                 <label for="price" class="form-label">Harga</label>
                 <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" id="price"
-                    name="price" value="{{ old('price',$register->room->price) }}" disabled>
+                    name="price" value="{{ old('price', $register->room->price) }}" disabled>
 
                 @error('price')
                     <div class="invalid-feedback">
