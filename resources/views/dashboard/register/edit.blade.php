@@ -1,19 +1,7 @@
 @extends('dashboard.layouts.main')
 
 @section('container')
-    {{-- <script>
-        $('#room_id')
-            .change(function () {
-            var str = "";
-            var value = "";
-            $( "select option:selected" ).each(function() {
-                str = $( this ).text() + " ";
-                value = $(this).value();
-            });
-            alert(value);
-            })
-            .change();
-    </script> --}}
+
 
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Edit Register</h1>
@@ -83,7 +71,7 @@
             <div class="col-md-6 mb-3">
                 <label for="price" class="form-label">Harga</label>
                 <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" id="price"
-                    name="price" value="{{ old('price', $register->room->price) }}" disabled>
+                    name="price" value="{{ old('price', $register->room->price) }}">
 
                 @error('price')
                     <div class="invalid-feedback">

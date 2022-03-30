@@ -46,7 +46,7 @@ class ReservationController extends Controller
     {
         $valid = $request->validate([
             "room_id" => 'required',
-            "guest_id" => 'required',
+            "guest_name" => 'required',
             "check_in" => 'required|date',
             "check_out" => 'required|date',
             "reserved_by" => 'required',
@@ -96,7 +96,7 @@ class ReservationController extends Controller
     {
         $valid = $request->validate([
             "room_id" => 'required',
-            "guest_id" => 'required',
+            "guest_name" => 'required',
             "check_in" => 'required|date',
             "check_out" => 'required|date',
             "reserved_by" => 'required',
