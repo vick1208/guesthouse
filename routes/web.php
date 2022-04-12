@@ -36,15 +36,14 @@ Route::group(['middleware'=>'guest'],function(){
     Route::get('login',[LoginController::class,'index'])->name('login');
 });
 
-Route::group(['middleware'=>['auth','roleCheck:Super']],function(){
-    Route::resource('dashboard/user',UserController::class);
-});
+
 
 
 Route::group(['middleware'=>['auth','roleCheck:Super,Admin'],'prefix'=>'dashboard'],function(){
     Route::get('/',function(){
         return view('dashboard.index');
     });
+    Route::resource('/user',UserController::class);
     Route::resource('/guest',GuestController::class);
     Route::resource('/room',RoomController::class);
     Route::get('/register/room',[RegisterGuestController::class,'getRoom']);

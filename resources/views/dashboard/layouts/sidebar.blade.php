@@ -7,7 +7,7 @@
                     Dashboard
                 </a>
             </li>
-            @if (auth()->user()->role === "Super")
+            {{-- @if (auth()->user()->role === "Super") --}}
 
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard/user*')? 'active' : '' }}" href="/dashboard/user">
@@ -15,7 +15,7 @@
                     User Record
                 </a>
             </li>
-            @endif
+            {{-- @endif --}}
 
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard/room*')? 'active' : '' }}" href="/dashboard/room">

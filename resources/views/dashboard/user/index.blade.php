@@ -10,7 +10,11 @@
                 {{ session('success') }}
             </div>
         @endif
+
+        @if (auth()->user()->role === "Super")
         <a href="/dashboard/user/create" class="btn btn-primary mb-3">Create new User</a>
+
+        @endif
         {{-- <span data-bs-toggle="tooltip" data-bs-placement="right" title="Create new User">
         <button type="button" class="btn btn-sm btn-primary shadow-sm myBtn border rounded" data-bs-toggle="modal"
             data-bs-target="#staticBackdrop">
@@ -35,18 +39,21 @@
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->role }}</td>
                         <td>
+
                             <a href="/dashboard/user/{{ $user->id }}" class="badge bg-info"><span
                                     data-feather="eye"></span></a>
                             <a href="/dashboard/user/{{ $user->id }}/edit" class="badge bg-warning"><span
                                     data-feather="edit"></span></a>
+                                    @if (auth()->user()->role === "Super")
+                                    <form action="/dashboard/user/{{ $user->id }}" method="POST" class="d-inline">
+                                        @method('delete')
+                                        @csrf
+                                        <button class="badge bg-danger border-0"
+                                            onclick="return confirm('Apakah Anda Ingin Menghapus?')"><span
+                                                data-feather="x-octagon"></span></button>
+                                    </form>
 
-                            <form action="/dashboard/user/{{ $user->id }}" method="POST" class="d-inline">
-                                @method('delete')
-                                @csrf
-                                <button class="badge bg-danger border-0"
-                                    onclick="return confirm('Apakah Anda Ingin Menghapus?')"><span
-                                        data-feather="x-octagon"></span></button>
-                            </form>
+                                    @endif
                         </td>
                     </tr>
                 @endforeach
