@@ -11,9 +11,9 @@
         <form action="/dashboard/register/{{ $register->id }}" method="post" class="row mb-5">
             @method('put')
             @csrf
-            <div class="col-md-5 mb-3">
+            <div class="col-md-3 mb-3">
                 <label for="room" class="form-label">Kamar</label>
-                <select class="form-select" name="room_id" id="room_id">
+                <select class="form-select" name="room_id" id="room_id" disabled>
                     @foreach ($rooms as $room)
                         @if (old('room_id', $register->room->id) == $room->id)
                             <option value="{{ $room->id }}" selected>{{ $room->number }}</option>
@@ -28,11 +28,11 @@
 
 
 
-            <div class="col-md-5 mb-3">
+            <div class="col-md-4 mb-3">
                 <label for="guest_name" class="form-label">Tamu</label>
 
                 <input type="text" class="form-control @error('guest_name') is-invalid @enderror" id="guest_name" name="guest_name"
-                    value="{{ old('guest_name') }}">
+                    value="{{ old('guest_name',$register->guest_name) }}">
 
                 @error('guest_name')
                     <div class="invalid-feedback">
@@ -80,7 +80,7 @@
                 @enderror
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-md-5 mb-3">
                 <label for="register_type" class="form-label">Tipe Registrasi</label>
                 <input type="text" class="form-control @error('register_type') is-invalid @enderror" id="register_type"
                     name="register_type" value="{{ old('register_type', $register->register_type) }}">
@@ -91,7 +91,10 @@
                 @enderror
             </div>
 
-            <button type="submit" class="btn btn-warning">Update</button>
+            <div class="mt-3">
+                <button type="submit" class="btn btn-warning">Update</button>
+
+            </div>
         </form>
     </div>
 

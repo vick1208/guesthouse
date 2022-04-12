@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="/">Hotel Project</a>
+        <a class="navbar-brand" href="/">Guest House </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -18,13 +18,13 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            Selamat Datang {{ auth()->user()->name }}
+                            Welcome {{ auth()->user()->name }}
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
 
                             <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-window"></i>Dashboard
-                                    Hotel</a>
+                                Guest House</a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
