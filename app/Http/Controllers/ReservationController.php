@@ -31,7 +31,7 @@ class ReservationController extends Controller
     public function create()
     {
         return view('dashboard.reservation.create', [
-            'guests' => Guest::all(),
+            // 'guests' => Guest::all(),
             'rooms' => Room::all()
         ]);
     }

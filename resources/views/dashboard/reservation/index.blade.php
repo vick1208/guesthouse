@@ -42,7 +42,7 @@
                 @forelse ($reservations as $res)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $res->guest->name }}</td>
+                        <td>{{ $res->guest_name }}</td>
                         <td>{{ $res->room->number }}</td>
                         <td>{{ $res->check_in }}</td>
                         <td>{{ $res->check_out }}</td>

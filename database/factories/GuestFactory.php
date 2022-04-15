@@ -25,7 +25,7 @@ class GuestFactory extends Factory
             'gender' => $this->faker->randomElement(['Pria', 'Wanita']),
             'job' => $this->faker->jobTitle,
             'birthdate' => $this->faker->date(),
-            'user_id' => mt_rand(1,50)
+            'user_id' => mt_rand(1,5)
         ];
     }
 }

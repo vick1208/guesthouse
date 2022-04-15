@@ -7,7 +7,7 @@
 </div>
 
 <div class="col-lg-8">
-    <form action="/dashboard/reserve" method="post" class="mb-5">
+    <form action="/dashboard/reserve" method="post" class="row mb-5">
         @csrf
         <div class="mb-3">
             <label for="room" class="form-label">Room</label>
@@ -90,6 +90,22 @@
     </form>
 </div>
 
+<div class="modal fade" id="guest" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Daftar Tamu Lama</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div x-data>
+                        <livewire:guest-table />
 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 @endsection
