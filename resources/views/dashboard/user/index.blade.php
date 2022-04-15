@@ -11,10 +11,10 @@
             </div>
         @endif
 
-        @if (auth()->user()->role === "Super")
+
         <a href="/dashboard/user/create" class="btn btn-primary mb-3">Create new User</a>
 
-        @endif
+
         {{-- <span data-bs-toggle="tooltip" data-bs-placement="right" title="Create new User">
         <button type="button" class="btn btn-sm btn-primary shadow-sm myBtn border rounded" data-bs-toggle="modal"
             data-bs-target="#staticBackdrop">
