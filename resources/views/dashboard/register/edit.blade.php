@@ -13,7 +13,7 @@
             @csrf
             <div class="col-md-3 mb-3">
                 <label for="room" class="form-label">Kamar</label>
-                <select class="form-select" name="room_id" id="room_id" disabled>
+                <select class="form-select" name="room_id" id="room_id">
                     @foreach ($rooms as $room)
                         @if (old('room_id', $register->room->id) == $room->id)
                             <option value="{{ $room->id }}" selected>{{ $room->number }}</option>

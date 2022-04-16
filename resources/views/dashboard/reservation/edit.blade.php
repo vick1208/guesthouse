@@ -26,7 +26,7 @@
             <label for="guest_name" class="form-label">Tamu</label>
 
             <input type="text" class="form-control @error('guest_name') is-invalid @enderror" id="guest_name" name="guest_name"
-                value="{{ old('guest_name') }}">
+                value="{{ old('guest_name',$reservation->guest_name) }}">
 
             @error('guest_name')
                 <div class="invalid-feedback">
