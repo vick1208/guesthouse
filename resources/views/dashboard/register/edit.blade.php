@@ -99,7 +99,7 @@
     </div>
 
     <script src="{{ asset('js/app.js') }}"></script>
-    {{-- <script>
+    <script>
 
         $('#room_id').on('change',(event)=>{
             console.log(event);
@@ -108,14 +108,14 @@
             });
         })
 
-        async function room(id){
+        // async function room(id){
 
 
-            let response = await fetch('room?id='+id)
-            let data = await response.json();
+        //     let response = await fetch('room?id='+id)
+        //     let data = await response.json();
 
-            return data;
-        }
+        //     return data;
+        // }
 
-    </script> --}}
+    </script>
 @endsection
