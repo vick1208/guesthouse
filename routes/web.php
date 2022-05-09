@@ -53,5 +53,4 @@ Route::group(['middleware'=>['auth','roleCheck:Super,Admin'],'prefix'=>'dashboar
     // Route::get('/transaction',function(){
     //     return view('dashboard.transaction.index');
     // });
-
 });
