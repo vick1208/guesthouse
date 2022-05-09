@@ -46,7 +46,8 @@ Route::group(['middleware'=>['auth','roleCheck:Super,Admin'],'prefix'=>'dashboar
     Route::resource('/user',UserController::class);
     Route::resource('/guest',GuestController::class);
     Route::resource('/room',RoomController::class);
-    Route::get('/register/room',[RegisterGuestController::class,'getRoom']);
+    Route::get('/room',[RoomController::class,'getRoom']);
+    // Route::get('/register/room',[RegisterGuestController::class,'getRoom']);
     Route::resource('/register',RegisterGuestController::class);
     Route::resource('/reserve',ReservationController::class)->except(['show']);
     // Route::get('/transaction',function(){

@@ -123,7 +123,7 @@
         })
 
         async function room(id) {
-            let response = await fetch('room?id=' + id)
+            let response = await fetch('/dashboard/room?id=' + id)
             let data = await response.json();
 
             return data;

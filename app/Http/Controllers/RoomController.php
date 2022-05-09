@@ -124,4 +124,13 @@ class RoomController extends Controller
         Room::destroy($room->id);
         return redirect('/dashboard/room')->with('success', 'Room telah dihapus.');
     }
+
+    public function getRoom(Request $request){
+
+        $data = Room::find($request->id);
+
+        return response()->json($data);
+    }
+
+
 }
