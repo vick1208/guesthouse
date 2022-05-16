@@ -7,8 +7,7 @@ use App\Http\Controllers\RegisterGuestController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\UserController;
-use App\Models\RegisterGuest;
-use App\Models\Reservation;
+
 
 /*
 |--------------------------------------------------------------------------
