@@ -6,7 +6,7 @@
 </div>
 
 <div class="col-lg-8">
-    <form action="/dashboard/room" method="post" class="mb-5">
+    <form action="/dashboard/rooms" method="post" class="mb-5">
     @csrf
     <div class="mb-3">
         <label for="type" class="form-label">Tipe Kamar</label>

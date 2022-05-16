@@ -8,7 +8,7 @@
 </div>
 
 <div class="col-lg-18">
-    <form action="/dashboard/room/{{ $room->id }}" method="post" class="mb-5">
+    <form action="/dashboard/rooms/{{ $room->id }}" method="post" class="mb-5">
         @method('put')
         @csrf
 

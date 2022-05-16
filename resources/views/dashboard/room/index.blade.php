@@ -11,7 +11,7 @@
             {{ session('success') }}
         </div>
     @endif
-    <a href="/dashboard/room/create" class="btn btn-primary mb-3">Create new Room</a>
+    <a href="/dashboard/rooms/create" class="btn btn-primary mb-3">Create new Room</a>
 
 
 
@@ -44,13 +44,13 @@
                     <td>{{ $room->capacity }}</td>
                     <td>{{ $room->price }}</td>
                     <td>
-                        <a href="/dashboard/room/{{ $room->id }}" class="badge bg-info"><span
+                        <a href="/dashboard/rooms/{{ $room->id }}" class="badge bg-info"><span
                                 data-feather="eye"></span></a>
 
 
-                        <a href="/dashboard/room/{{ $room->id }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a>
+                        <a href="/dashboard/rooms/{{ $room->id }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a>
 
-                        <form action="/dashboard/room/{{ $room->id }}" method="POST" class="d-inline">
+                        <form action="/dashboard/rooms/{{ $room->id }}" method="POST" class="d-inline">
                             @method('delete')
                             @csrf
                             <button class="badge bg-danger border-0"

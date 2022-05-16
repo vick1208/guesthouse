@@ -18,7 +18,7 @@
             {{-- @endif --}}
 
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('dashboard/room*')? 'active' : '' }}" href="/dashboard/room">
+                <a class="nav-link {{ Request::is('dashboard/rooms*')? 'active' : '' }}" href="/dashboard/rooms">
                     <span data-feather="book"></span>
                     Room Record
                 </a>
