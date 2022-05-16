@@ -16,7 +16,6 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        // User::factory(3)->create();
         User::create([
             'name' => 'Superadmin',
             'email'=>'super@gmail.com',
@@ -24,5 +23,6 @@ class UserSeeder extends Seeder
             'role' => 'Super',
         ]);
         User::factory(4)->create();
+
     }
 }
