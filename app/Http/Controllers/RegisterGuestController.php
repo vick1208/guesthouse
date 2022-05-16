@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Guest;
+// use App\Models\Guest;
 use App\Models\RegisterGuest;
 use App\Models\Room;
 use Illuminate\Http\Request;
-use Illuminate\Validation\ValidationException;
+// use Illuminate\Validation\ValidationException;
 
 class RegisterGuestController extends Controller
 {
@@ -109,7 +109,7 @@ class RegisterGuestController extends Controller
 
         $valid = $request->validate(
             [
-                // "room_id" => 'required',
+                "room_id" => 'required',
                 "guest_name" => 'required',
                 "check_in" => 'required|date',
                 "check_out" => 'required|date',
