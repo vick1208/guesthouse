@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             GuestSeeder::class,
             // TypeSeeder::class,
-            RoomStatusSeeder::class,
+            // RoomStatusSeeder::class,
             // RoomSeeder::class
 
         ]);
