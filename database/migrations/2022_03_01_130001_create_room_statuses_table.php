@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('code');
-            $table->longText('info');
+            // $table->longText('info');
             $table->timestamps();
         });
     }
