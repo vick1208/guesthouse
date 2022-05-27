@@ -55,7 +55,7 @@ class RoomController extends Controller
         ]);
 
         Room::create($valid);
-        return redirect('/dashboard/room')->with('success', 'Data Room ditambahkan.');
+        return redirect('/dashboard/rooms')->with('success', 'Data Room ditambahkan.');
     }
 
     /**
@@ -110,7 +110,7 @@ class RoomController extends Controller
         $validated = $request->validate($rules);
         Room::where('id',$room->id)->update($validated);
 
-        return redirect('/dashboard/room')->with('success', 'Room telah diubah.');
+        return redirect('/dashboard/rooms')->with('success', 'Room telah diubah.');
     }
 
     /**
