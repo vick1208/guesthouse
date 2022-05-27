@@ -47,17 +47,7 @@
                 </div>
             @enderror
         </div>
-        <div class="mb-3">
-            <label for="capacity" class="form-label">Kapasitas</label>
-            <input type="number" step="1" class="form-control @error('capacity') is-invalid @enderror" id="capacity" name="capacity"
-                value="{{ old('capacity',$room->capacity) }}">
 
-            @error('capacity')
-                <div class="invalid-feedback">
-                    {{ $message }}
-                </div>
-            @enderror
-        </div>
         <div class="mb-3">
             <label for="price" class="form-label">Harga</label>
             <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" id="price" name="price"

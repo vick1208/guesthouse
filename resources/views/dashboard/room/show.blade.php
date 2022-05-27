@@ -19,8 +19,8 @@
 
 
 
-            <h1>Tipe : {{ $room->type->name }}</h1>
-            <h1>Status : {{ $room->roomStatus->name }}</h1>
+            <h1>Tipe Kamar : {{ $room->type->name }}</h1>
+            <h1>Status Kamar : {{ $room->roomStatus->name }}</h1>
 
 
                 {!! $room->view !!}

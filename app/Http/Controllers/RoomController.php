@@ -49,7 +49,6 @@ class RoomController extends Controller
             "type_id" => 'required|string',
             "room_status_id"=> 'required|string',
             "number"=>'required|max:255',
-            "capacity" => 'required',
             "price" => 'required',
             "view" => 'required'
         ]);
@@ -102,7 +101,6 @@ class RoomController extends Controller
             "type_id" => 'required|string',
             "room_status_id"=> 'required|string',
             "number"=>'required|max:255',
-            "capacity" => 'required',
             "price" => 'required',
             "view" => 'required'
         ];

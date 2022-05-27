@@ -29,7 +29,6 @@
                 <th scope="col">Tipe</th>
                 <th scope="col">Status Kamar</th>
                 <th scope="col">Nomor</th>
-                <th scope="col">Kapasitas</th>
                 <th scope="col">Harga</th>
                 <th scope="col">Action</th>
             </tr>
@@ -41,7 +40,6 @@
                     <td>{{ $room->type->name }}</td>
                     <td>{{ $room->roomStatus->name }}</td>
                     <td>{{ $room->number}}</td>
-                    <td>{{ $room->capacity }}</td>
                     <td>{{ $room->price }}</td>
                     <td>
                         <a href="/dashboard/rooms/{{ $room->id }}" class="badge bg-info"><span

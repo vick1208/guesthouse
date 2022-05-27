@@ -18,7 +18,6 @@ return new class extends Migration
             $table->foreignId('type_id')->constrained();
             $table->foreignId('room_status_id')->constrained();
             $table->string('number');
-            $table->bigInteger('capacity');
             $table->double('price');
             $table->longText('view');
             $table->timestamps();
