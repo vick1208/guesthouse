@@ -28,7 +28,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Tipe</th>
                 <th scope="col">Status Kamar</th>
-                <th scope="col">Nomor</th>
+                <th scope="col">Nomor Kamar</th>
                 <th scope="col">Harga</th>
                 <th scope="col">Action</th>
             </tr>
@@ -42,11 +42,11 @@
                     <td>{{ $room->number}}</td>
                     <td>{{ $room->price }}</td>
                     <td>
-                        <a href="/dashboard/rooms/{{ $room->id }}" class="badge bg-info"><span
+                        <a href="/dashboard/rooms/{{ $room->id }}" class="badge bg-info" ><span
                                 data-feather="eye"></span></a>
 
 
-                        <a href="/dashboard/rooms/{{ $room->id }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a>
+                        <a href="/dashboard/rooms/{{ $room->id }}/edit" class="badge bg-warning" target="_blank"><span data-feather="edit"></span></a>
 
                         <form action="/dashboard/rooms/{{ $room->id }}" method="POST" class="d-inline">
                             @method('delete')
