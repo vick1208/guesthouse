@@ -46,7 +46,7 @@
                                 data-feather="eye"></span></a>
 
 
-                        <a href="/dashboard/rooms/{{ $room->id }}/edit" class="badge bg-warning" target="_blank"><span data-feather="edit"></span></a>
+                        <a href="/dashboard/rooms/{{ $room->id }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a>
 
                         <form action="/dashboard/rooms/{{ $room->id }}" method="POST" class="d-inline">
                             @method('delete')
