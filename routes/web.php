@@ -49,9 +49,9 @@ Route::group(['middleware'=>['auth','roleCheck:Super,Admin'],'prefix'=>'dashboar
     // Route::get('/register/room',[RegisterGuestController::class,'getRoom']);
     Route::resource('/register',RegisterGuestController::class);
     Route::resource('/reserve',ReservationController::class)->except(['show']);
-    // Route::get('/transaction',function(){
-    //     return view('dashboard.transaction.index');
-    // });
+    Route::get('/transaction',function(){
+        return view('dashboard.transaction.index');
+    });
 
 
 

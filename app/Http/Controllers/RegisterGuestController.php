@@ -61,7 +61,8 @@ class RegisterGuestController extends Controller
         RegisterGuest::create($valid);
 
 
-        return redirect('/dashboard/register')->with('success','Guest telah diregistrasi');
+        // return redirect('/dashboard/register')->with('success','Guest telah diregistrasi');
+        return redirect('/dashboard/transaction');
 
 
     }
