@@ -5,36 +5,21 @@
     <h1 class="h2">Transaction</h1>
 </div>
 
-{{-- <div class="d-flex justify-content-evenly">
+<div class="table-responsive col-lg-19">
+    <a href="#" class="btn btn-success mb-3"><span data-feather="dollar-sign"></span> Create payment</a>
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nama</th>
+                <th scope="col">Kamar</th>
 
-    <button type="button" class="btn btn-primary btn-lg shadow-sm myBtn border rounded" data-bs-toggle="modal"
-    data-bs-target="#register">Register</button>
-    <button type="button" class="btn btn-primary btn-lg shadow-sm myBtn border rounded" data-bs-toggle="modal"
-    data-bs-target="#reserve">Reservation</button>
+            </tr>
+        </thead>
+        <tbody>
 
-
-</div> --}}
-<button type="button" class="btn btn-primary btn-lg shadow-sm myBtn border rounded">Register</button>
-
-    {{-- <div class="modal fade" id="reserve" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Reservation Transaction</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="d-flex justify-content-center">
-                        <a class="btn btn-sm btn-primary m-1" href="/dashboard/transaction/dp">Down Payment</a>
-                        <a class="btn btn-sm btn-primary m-1" href="/dashboard/transaction/ad">Adv. Deposit</a>
-                        <a class="btn btn-sm btn-danger m-1" href="/dashboard/transaction/refund">Refund</a>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div> --}}
+        </tbody>
+    </table>
+</div>
+<a href="/dashboard" class="btn btn-primary mb-3"><span data-feather="arrow-left"></span> Back to Main Page</a>
 @endsection
