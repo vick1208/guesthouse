@@ -5,7 +5,7 @@
     <h1 class="h2">Transaction</h1>
 </div>
 
-<div class="d-flex justify-content-evenly">
+{{-- <div class="d-flex justify-content-evenly">
 
     <button type="button" class="btn btn-primary btn-lg shadow-sm myBtn border rounded" data-bs-toggle="modal"
     data-bs-target="#register">Register</button>
@@ -13,10 +13,10 @@
     data-bs-target="#reserve">Reservation</button>
 
 
-</div>
+</div> --}}
+<button type="button" class="btn btn-primary btn-lg shadow-sm myBtn border rounded">Register</button>
 
-
-    <div class="modal fade" id="reserve" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    {{-- <div class="modal fade" id="reserve" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -26,7 +26,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="d-flex justify-content-center">
-                        {{-- <a class="btn btn-sm btn-primary m-1" href="/dashboard/transaction/dp">Down Payment</a> --}}
+                        <a class="btn btn-sm btn-primary m-1" href="/dashboard/transaction/dp">Down Payment</a>
                         <a class="btn btn-sm btn-primary m-1" href="/dashboard/transaction/ad">Adv. Deposit</a>
                         <a class="btn btn-sm btn-danger m-1" href="/dashboard/transaction/refund">Refund</a>
                     </div>
@@ -36,5 +36,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection
