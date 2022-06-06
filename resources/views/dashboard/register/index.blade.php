@@ -7,11 +7,11 @@
     </div>
 
     <div class="table-responsive col-lg-19">
-        @if (session()->has('success'))
+        {{-- @if (session()->has('success'))
             <div class="alert alert-success" role="alert">
                 {{ session('success') }}
             </div>
-        @endif
+        @endif --}}
         {{-- <a href="/dashboard/register/create" class="btn btn-primary mb-3">Create new Registration</a> --}}
         <span data-bs-toggle="tooltip" data-bs-placement="right" title="Create new Registration">
             <button type="button" class="btn btn-sm btn-primary shadow-sm myBtn border rounded" data-bs-toggle="modal"
@@ -20,6 +20,7 @@
                 Create new Registration
             </button>
         </span>
+        <a href="/dashboard/register" class="btn btn-primary mb-3"><span data-feather="arrow-right"></span> Go to Transaction Page</a>
         <table class="table table-striped table-sm">
             <thead>
                 <tr>
