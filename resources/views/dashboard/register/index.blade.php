@@ -20,8 +20,8 @@
                 Create new Registration
             </button>
         </span>
-        <a href="/dashboard/register" class="btn btn-primary mb-3"><span data-feather="arrow-right"></span> Go to Transaction Page</a>
-        <table class="table table-striped table-sm">
+        <a href="/dashboard/transaction" class="btn btn-sm btn-primary"><span data-feather="arrow-right"></span> Go to Transaction Page</a>
+        <table class="table table-hover table-sm">
             <thead>
                 <tr>
                     <th scope="col">#</th>
