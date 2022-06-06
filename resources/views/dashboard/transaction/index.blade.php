@@ -7,7 +7,7 @@
 
     <div class="table-responsive col-lg-19">
         <a href="/dashboard/register" class="btn btn-primary mb-3"><span data-feather="arrow-left"></span> Go to Register Guest Page</a>
-        <a href="#" class="btn btn-success mb-3"><span data-feather="dollar-sign"></span> Create payment</a>
+        <a href="/dashboard/pay" class="btn btn-success mb-3"><span data-feather="dollar-sign"></span> Create payment</a>
         <table class="table table-hover table-sm">
             <thead>
                 <tr>
