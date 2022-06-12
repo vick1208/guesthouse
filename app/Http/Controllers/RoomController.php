@@ -120,7 +120,7 @@ class RoomController extends Controller
     public function destroy(Room $room)
     {
         Room::destroy($room->id);
-        return redirect('/dashboard/room')->with('success', 'Room telah dihapus.');
+        return redirect('/dashboard/rooms')->with('success', 'Room telah dihapus.');
     }
 
     public function getRoom(Request $request){

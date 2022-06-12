@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterGuestController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserController;
 
 
@@ -49,12 +50,8 @@ Route::group(['middleware'=>['auth','roleCheck:Super,Admin'],'prefix'=>'dashboar
     // Route::get('/register/room',[RegisterGuestController::class,'getRoom']);
     Route::resource('/register',RegisterGuestController::class);
     Route::resource('/reserve',ReservationController::class)->except(['show']);
-    Route::get('/transaction',function(){
-        return view('dashboard.transaction.index');
-    });
-    Route::get('pay',function(){
-        return view('dashboard.transaction.pay');
-    });
+    Route::resource('/transaction',TransactionController::class)->except(['show']);
+
 
 });
 

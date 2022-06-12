@@ -34,7 +34,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($rooms as $room)
+            @forelse ($rooms as $room)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $room->type->name }}</td>
@@ -58,7 +58,13 @@
 
                     </td>
                 </tr>
-            @endforeach
+                @empty
+                <tr>
+                    <td colspan="15" class="text-center">
+                        There's no data in this table
+                    </td>
+                </tr>
+            @endforelse
         </tbody>
     </table>
 </div>
