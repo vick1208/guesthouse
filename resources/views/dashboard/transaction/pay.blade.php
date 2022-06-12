@@ -6,7 +6,7 @@
 </div>
 
 <div class="col-lg-8">
-    <form action="/dashboard/user" method="post" class="mb-5">
+    <form action="/dashboard/transaction" method="post" class="mb-5">
         @csrf
         <div class="mb-3">
             <label for="name">Nama</label>
