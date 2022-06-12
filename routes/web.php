@@ -27,6 +27,7 @@ Route::get('/', function () {
     ]);
 });
 
+// Route::get('/',abort(404));
 Route::post('login',[LoginController::class,'auth']);
 Route::post('/logout',[LoginController::class,'logout']);
 
