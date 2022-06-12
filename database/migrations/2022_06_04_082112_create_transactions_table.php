@@ -18,8 +18,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->string('guest_name');
             $table->foreignId('room_id')->constrained();
-            $table->date('check_in');
-            $table->date('check_out');
+            $table->foreignId('payment_id')->constrained();
             $table->double('paid_price');
             $table->timestamps();
         });
