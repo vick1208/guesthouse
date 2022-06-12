@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreignId('room_id')->constrained();
             $table->foreignId('payment_id')->constrained();
             $table->double('paid_price');
+            $table->string('pay_status');
             $table->timestamps();
         });
     }
