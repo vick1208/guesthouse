@@ -1,5 +1,5 @@
 <!-- Remove the container if you want to extend the Footer to full width. -->
-<div class="container my-0">
+{{-- <div class="container my-0"> --}}
 
     <footer class="text-center text-lg-start" style="background-color: #db6930;">
       <div class="container d-flex justify-content-center py-5">
@@ -25,5 +25,5 @@
       <!-- Copyright -->
     </footer>
 
-  </div>
+  {{-- </div> --}}
   <!-- End of .container -->

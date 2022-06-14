@@ -2,7 +2,7 @@
 
 
 @section('container')
-    <div class="row justify-content-center p-4">
+    <div class="row justify-content-center p-5">
         <div class="col-md-4">
 
             @if (session()->has('success'))
@@ -44,5 +44,7 @@
                 {{-- <small class="d-block text-center mt-3">Not registered as admin? <a href="/register">Register as admin</a></small> --}}
             </main>
         </div>
+    </div>
+    <div class="p-5">
     </div>
 @endsection
