@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Payment;
+use App\Models\Room;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 
 class TransactionController extends Controller
@@ -13,7 +16,9 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        return view("dashboard.transaction.index",[]);
+        return view("dashboard.transaction.index",[
+            "transactions"=> Transaction::with(['user','guest','room'])->get()
+        ]);
     }
 
     /**
@@ -23,7 +28,10 @@ class TransactionController extends Controller
      */
     public function create()
     {
-        return view("dashboard.transaction.pay");
+        return view("dashboard.transaction.pay",[
+            'rooms' => Room::all(),
+            'pays' => Payment::all()
+        ]);
     }
 
     /**

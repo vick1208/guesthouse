@@ -19,15 +19,18 @@ class RoomFactory extends Factory
     {
 
         $price = array(
-           440000,
-           660000
+            440000,
+            660000,
+            1980000,
+            1100000,
+            825000
+
         );
-        static $order = 10;
+        static $order = 100;
         return [
             'type_id' => Type::all()->random()->id,
             'room_status_id' => '1',
             'number' => $order++,
-            'capacity' => $this->faker->numberBetween(1,5),
             'price' => $this->faker->randomElement($price),
             'view' => $this->faker->paragraph(35)
         ];

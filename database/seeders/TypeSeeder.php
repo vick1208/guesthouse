@@ -33,9 +33,9 @@ class TypeSeeder extends Seeder
             // 'Cabana Room',
             'Kamar Standart',
             'Kamar Superior',
-            'Cottage 4 kamar',
-            'Cottage 3 kamar',
-            'Cottage 2 kamar'
+            'Villa A (4 kamar)',
+            'Villa B (3 kamar)',
+            'Villa C (2 kamar)'
         ];
         // $info = [
         //     'Seperti namanya, jenis kamar standard room adalah tipe kamar hotel yang paling dasar di hotel. Biasanya, kamar tipe ini dibanderol dengan harga yang relatif murah. Fasilitas yang ditawarkan pun standar seperti kasur ukuran king size atau dua queen size. Namun, penawaran yang diberikan tergantung pada masing-masing hotel. Standard room hotel bintang 1 dan bintang 5 tentu berbeda.',

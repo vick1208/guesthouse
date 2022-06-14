@@ -15,6 +15,14 @@ class RoomSeeder extends Seeder
      */
     public function run()
     {
-        Room::factory(10)->create();
+        Room::factory(19)->create();
+        // $price = [
+        //     440000,
+        //     660000,
+        //     1980000,
+        //     1100000,
+        //     825000
+        // ];
+
     }
 }
