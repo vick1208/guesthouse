@@ -1,5 +1,5 @@
 <!-- Remove the container if you want to extend the Footer to full width. -->
-<div class="container my-5">
+
     <!-- Footer -->
     <footer class="text-center text-lg-start text-white" style="background-color: #45526e">
         <!-- Grid container -->
@@ -115,5 +115,5 @@
         <!-- Grid container -->
     </footer>
     <!-- Footer -->
-</div>
+
 <!-- End of .container -->
