@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #db6930;">
     <div class="container">
         <a class="navbar-brand" href="/">Guest House </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
