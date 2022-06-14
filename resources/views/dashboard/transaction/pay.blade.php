@@ -6,9 +6,9 @@
     </div>
 
     <div class="col-lg-8">
-        <form action="/dashboard/transaction" method="post" class="mb-5">
+        <form action="/dashboard/transaction" method="post" class="row mb-5">
             @csrf
-            <div class="mb-3">
+            <div class="col-md-3 mb-3">
                 <label for="room_id" class="form-label">Room</label>
                 <select class="form-select" name="room_id" id="room_id">
                     @foreach ($rooms as $room)
@@ -40,7 +40,7 @@
             </div>
             <div class="w-100"></div>
 
-            <div class="mb-3">
+            <div class="col-md-3 mb-3">
                 <label for="payment" class="form-label">Metode Pembayaran</label>
                 <input type="text" class="form-control @error('payment') is-invalid @enderror" id="payment" name="payment"
                     value="{{ old('payment') }}">
@@ -50,7 +50,7 @@
                     </div>
                 @enderror
             </div>
-            <div class="mb-3">
+            <div class="col-md-5 mb-3">
                 <label for="status" class="form-label">Status Reservasi</label>
                 <input type="text" class="form-control @error('status') is-invalid @enderror" id="status" name="status"
                     value="{{ old('status') }}">
@@ -62,7 +62,10 @@
             </div>
 
 
-            <button type="submit" class="btn btn-primary">Create Reservation</button>
+            <div class="mt-3">
+                <button type="submit" class="btn btn-primary">Create Reservation</button>
+
+            </div>
 
         </form>
     </div>

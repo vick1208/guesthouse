@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             GuestSeeder::class,
             TypeSeeder::class,
+            PaymentSeeder::class,
             RoomStatusSeeder::class,
             RoomSeeder::class
 

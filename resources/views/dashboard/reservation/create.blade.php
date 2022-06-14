@@ -9,7 +9,7 @@
     <div class="col-lg-8">
         <form action="/dashboard/reserve" method="post" class="row mb-5">
             @csrf
-            <div class="mb-3">
+            <div class="col-md-3 mb-3">
                 <label for="room" class="form-label">Room</label>
                 <select class="form-select" name="room_id" id="room_id">
                     @foreach ($rooms as $room)
@@ -40,7 +40,7 @@
 
             </div>
             <div class="w-100"></div>
-            <div class="mb-3">
+            <div class="col-md-5 mb-3">
                 <label for="check_in" class="form-label">Check In Date</label>
                 <input type="date" class="form-control @error('check_in') is-invalid @enderror" name="check_in"
                     id="check_in" value="{{ old('check_in') }}">
@@ -50,7 +50,7 @@
                     </div>
                 @enderror
             </div>
-            <div class="mb-3">
+            <div class="col-md-5 mb-3">
                 <label for="check_out" class="form-label">Check Out Date</label>
                 <input type="date" class="form-control @error('check_out') is-invalid @enderror" name="check_out"
                     id="check_out" value="{{ old('check_out') }}">
@@ -60,7 +60,7 @@
                     </div>
                 @enderror
             </div>
-            <div class="mb-3">
+            <div class="col-md-5 mb-3">
                 <label for="reserved_by" class="form-label">Reservasi dari</label>
                 <input type="text" class="form-control @error('reserved_by') is-invalid @enderror" id="reserved_by"
                     name="reserved_by" value="{{ old('reserved_by') }}">
@@ -70,7 +70,7 @@
                     </div>
                 @enderror
             </div>
-            <div class="mb-3">
+            <div class="col-md-5 mb-3">
                 <label for="status" class="form-label">Status Reservasi</label>
                 <input type="text" class="form-control @error('status') is-invalid @enderror" id="status" name="status"
                     value="{{ old('status') }}">
@@ -81,10 +81,10 @@
                 @enderror
             </div>
 
+            <div class="mt-3">
+                <button type="submit" class="btn btn-primary">Create Reservation</button>
 
-            <button type="submit" class="btn btn-primary">Create Reservation</button>
-
-
+            </div>
         </form>
     </div>
 
