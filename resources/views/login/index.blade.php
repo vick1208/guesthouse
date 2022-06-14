@@ -2,7 +2,7 @@
 
 
 @section('container')
-    <div class="row justify-content-center">
+    <div class="row justify-content-center p-4">
         <div class="col-md-4">
 
             @if (session()->has('success'))
