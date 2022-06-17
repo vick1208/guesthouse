@@ -9,7 +9,7 @@
         <form action="/dashboard/transaction" method="post" class="row mb-5">
             @csrf
             <div class="col-md-3 mb-3">
-                <label for="room_id" class="form-label">Room</label>
+                <label for="room_id" class="form-label">Kamar</label>
                 <select class="form-select" name="room_id" id="room_id">
                     <option value="-1" selected disabled>Nomor Kamar</option>
                     @foreach ($rooms as $room)
@@ -42,32 +42,46 @@
             <div class="w-100"></div>
 
             <div class="col-md-3 mb-3">
-                <label for="payment" class="form-label">Metode Pembayaran</label>
-                <select class="form-select" name="pay_id">
+                <label for="payment_id" class="form-label">Metode Pembayaran</label>
+                <select class="form-select" name="payment_id" id="payment_id">
+                    <option value="-1" selected disabled>Payment method</option>
                     @foreach ($pays as $pay)
-                        @if (old('pay_id') == $pay->id)
-                            <option value="{{ $pay->id }}" selected>{{ $pay->name }}</option>
+                        @if (old('payment_id') == $pay->id)
+                            <option value="{{ $pay->id }}">{{ $pay->name }}</option>
                         @else
                             <option value="{{ $pay->id }}">{{ $pay->name }}</option>
                         @endif
                     @endforeach
                 </select>
             </div>
-            <div class="col-md-3 mb-3">
-                <label for="price" class="form-label">Harga</label>
-                <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" id="price"
-                    name="price" value="{{ old('price') }}">
 
-                @error('price')
+            <div class="col-md-3 mb-3">
+                <label for="paid_price" class="form-label">Harga yang dibayar</label>
+                <input type="number" step="0.01" class="form-control @error('paid_price') is-invalid @enderror" id="paid_price"
+                    name="paid_price" value="{{ old('paid_price') }}">
+
+                @error('paid_price')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
                 @enderror
             </div>
+            <div class="col-md-4 mb-3">
+                <label for="pay_status" class="form-label">Status Pembayaran</label>
 
+                <input type="text" class="form-control @error('pay_status') is-invalid @enderror" id="pay_status"
+                    name="pay_status" value="{{ old('pay_status') }}">
+
+                @error('pay_status')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+
+            </div>
 
             <div class="mt-3">
-                <button type="submit" class="btn btn-primary">Create Reservation</button>
+                <button type="submit" class="btn btn-primary">Buat Payment</button>
 
             </div>
 

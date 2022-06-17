@@ -10,7 +10,7 @@
         <form action="/dashboard/reserve" method="post" class="row mb-5">
             @csrf
             <div class="col-md-3 mb-3">
-                <label for="room" class="form-label">Room</label>
+                <label for="room" class="form-label">Kamar</label>
                 <select class="form-select" name="room_id" id="room_id">
                     <option value="-1" selected disabled>Nomor Kamar</option>
                     @foreach ($rooms as $room)

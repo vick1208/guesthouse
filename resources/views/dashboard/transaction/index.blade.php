@@ -17,15 +17,35 @@
                     <th scope="col">Kamar</th>
                     <th scope="col">Harga kamar</th>
                     <th scope="col">Harga yang dibayar</th>
+                    <th scope="col">Status pembayaran</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
-                {{-- @forelse ( as )
+                @forelse ($transactions as $tran)
+                    <tr>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $tran->guest_name }} </td>
+                        <td>{{ $tran->room->number }}</td>
+                        <td>{{ $tran->room->price }}</td>
+                        <td>{{ $tran->paid_price }}</td>
+                        <td>{{ $tran->pay_status }}</td>
+                        <td>
+                            <a href="/dashboard/transaction/{{ $tran->id }}/edit" class="badge bg-warning"><span
+                                data-feather="edit"></span></a>
+
+                                <form action="/dashboard/transaction/{{ $tran->id }}" method="POST" class="d-inline">
+                                    @method('delete')
+                                    @csrf
+                                    <button class="badge bg-danger border-0"
+                                        onclick="return confirm('Apakah Anda Ingin Menghapus?')"><span
+                                            data-feather="x-octagon"></span></button>
+                                </form>
+                        </td>
+                    </tr>
 
                 @empty
-
-                @endforelse --}}
+                @endforelse
             </tbody>
         </table>
     </div>

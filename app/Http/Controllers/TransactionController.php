@@ -42,7 +42,21 @@ class TransactionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // @dd($request);
+        $valid = $request->validate([
+            "room_id" => 'required',
+            "guest_name" => 'required',
+            "payment_id" => 'required',
+            "paid_price" => 'required|numeric',
+            "pay_status"=> 'required'
+        ]);
+
+        $valid['user_id'] = auth()->user()->id;
+
+        Transaction::create($valid);
+
+        return redirect('/dashboard/register')->with('success','Data telah diisi');
+
     }
 
     /**
@@ -64,7 +78,11 @@ class TransactionController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('dashboard.transaction.edit',[
+            'transaction'=>Transaction::find($id),
+            'rooms' => Room::all(),
+            'pays' => Payment::all()
+        ]);
     }
 
     /**

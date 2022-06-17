@@ -50,7 +50,7 @@ class RegisterGuestController extends Controller
                 "guest_name" => 'required',
                 "check_in" => 'required|date',
                 "check_out" => 'required|date',
-                "price" => 'required',
+                "price" => 'required|numeric',
                 "register_type" => 'required'
             ]
         );
