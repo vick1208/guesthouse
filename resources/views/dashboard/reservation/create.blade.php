@@ -12,6 +12,7 @@
             <div class="col-md-3 mb-3">
                 <label for="room" class="form-label">Room</label>
                 <select class="form-select" name="room_id" id="room_id">
+                    <option value="-1" selected disabled>Nomor Kamar</option>
                     @foreach ($rooms as $room)
                         @if (old('room_id') == $room->id)
                             <option value="{{ $room->id }}" selected>{{ $room->number }}</option>
