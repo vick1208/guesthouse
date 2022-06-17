@@ -11,9 +11,10 @@
             <div class="col-md-3 mb-3">
                 <label for="room_id" class="form-label">Room</label>
                 <select class="form-select" name="room_id" id="room_id">
+                    <option value="-1" selected disabled>Nomor Kamar</option>
                     @foreach ($rooms as $room)
                         @if (old('room_id') == $room->id)
-                            <option value="{{ $room->id }}" selected>{{ $room->number }}</option>
+                            <option value="{{ $room->id }}">{{ $room->number }}</option>
                         @else
                             <option value="{{ $room->id }}">{{ $room->number }}</option>
                         @endif
@@ -42,19 +43,22 @@
 
             <div class="col-md-3 mb-3">
                 <label for="payment" class="form-label">Metode Pembayaran</label>
-                <input type="text" class="form-control @error('payment') is-invalid @enderror" id="payment" name="payment"
-                    value="{{ old('payment') }}">
-                @error('payment')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
+                <select class="form-select" name="pay_id">
+                    @foreach ($pays as $pay)
+                        @if (old('pay_id') == $pay->id)
+                            <option value="{{ $pay->id }}" selected>{{ $pay->name }}</option>
+                        @else
+                            <option value="{{ $pay->id }}">{{ $pay->name }}</option>
+                        @endif
+                    @endforeach
+                </select>
             </div>
-            <div class="col-md-5 mb-3">
-                <label for="status" class="form-label">Status Reservasi</label>
-                <input type="text" class="form-control @error('status') is-invalid @enderror" id="status" name="status"
-                    value="{{ old('status') }}">
-                @error('status')
+            <div class="col-md-3 mb-3">
+                <label for="price" class="form-label">Harga</label>
+                <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" id="price"
+                    name="price" value="{{ old('price') }}">
+
+                @error('price')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -86,4 +90,22 @@
             </div>
         </div>
     </div>
+
+    <script src="{{ asset('js/app.js') }}"></script>
+
+    <script>
+        $('#room_id').on('change', (event) => {
+            // console.log(event);
+            room(event.target.value).then(room => {
+                $('#price').val(room.price);
+            });
+        })
+
+        async function room(id) {
+            let response = await fetch('/dashboard/room?id=' + id)
+            let data = await response.json();
+
+            return data;
+        }
+    </script>
 @endsection

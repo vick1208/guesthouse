@@ -21,7 +21,11 @@
                 </tr>
             </thead>
             <tbody>
+                {{-- @forelse ( as )
 
+                @empty
+
+                @endforelse --}}
             </tbody>
         </table>
     </div>
