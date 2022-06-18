@@ -128,7 +128,7 @@ class RegisterGuestController extends Controller
         //     $room->save();
         // }
 
-        return redirect('/dashboard/register')->with('success', 'Data register telah diubah.');
+        return redirect('/dashboard/register');
 
 
     }
@@ -150,7 +150,7 @@ class RegisterGuestController extends Controller
         $reg_guest->delete();
 
         // RegisterGuest::destroy($id);
-        return redirect('/dashboard/register')->with('success', 'Guest telah dihapus.');
+        return redirect('/dashboard/register');
     }
 
 

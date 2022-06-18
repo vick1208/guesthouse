@@ -16,8 +16,8 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        return view("dashboard.transaction.index",[
-            "transactions"=> Transaction::with(['user','guest','room'])->get()
+        return view("dashboard.transaction.index", [
+            "transactions" => Transaction::with(['user', 'guest', 'room'])->get()
         ]);
     }
 
@@ -28,7 +28,7 @@ class TransactionController extends Controller
      */
     public function create()
     {
-        return view("dashboard.transaction.pay",[
+        return view("dashboard.transaction.pay", [
             'rooms' => Room::all(),
             'pays' => Payment::all()
         ]);
@@ -48,15 +48,14 @@ class TransactionController extends Controller
             "guest_name" => 'required',
             "payment_id" => 'required',
             "paid_price" => 'required|numeric',
-            "pay_status"=> 'required'
+            "pay_status" => 'required'
         ]);
 
         $valid['user_id'] = auth()->user()->id;
 
         Transaction::create($valid);
 
-        return redirect('/dashboard/register')->with('success','Data telah diisi');
-
+        return redirect('/dashboard/register');
     }
 
     /**
@@ -78,8 +77,8 @@ class TransactionController extends Controller
      */
     public function edit($id)
     {
-        return view('dashboard.transaction.edit',[
-            'transaction'=>Transaction::find($id),
+        return view('dashboard.transaction.edit', [
+            'transaction' => Transaction::find($id),
             'rooms' => Room::all(),
             'pays' => Payment::all()
         ]);
@@ -94,7 +93,23 @@ class TransactionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // @dd($request,$id);
+        $valid = $request->validate(
+            [
+                "room_id" => 'required',
+                "guest_name" => 'required',
+                "payment_id" => 'required',
+                "paid_price" => 'required|numeric',
+                "pay_status" => 'required'
+            ]
+        );
+        $valid['user_id'] = auth()->user()->id;
+
+        Transaction::where('id',$id)->update($valid);
+
+        return redirect('/dashboard/transaction');
+
+
     }
 
     /**
@@ -105,6 +120,9 @@ class TransactionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete =Transaction::find($id);
+        $delete->delete();
+
+        return redirect('/dashboard/transaction');
     }
 }
