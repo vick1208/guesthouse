@@ -3,18 +3,14 @@
 
     <footer class="text-center text-lg-start" style="background-color: #db6930;">
       <div class="container d-flex justify-content-center py-5">
-        <a href="#" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+        <a href="https://www.facebook.com/pages/DStrawberry-Cafe-and-Guest-House-Malino/276599255748669" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;" target="_blank">
           <i class="bi bi-facebook"></i>
         </a>
-        <a href="#" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
-          <i class="bi bi-youtube"></i>
-        </a>
-        <a href="#" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+
+        <a href="https://instagram.com/dstrawberry_malino?igshid=YmMyMTA2M2Y=" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;" target="_blank">
           <i class="bi bi-instagram"></i>
         </a>
-        <a href="#" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
-          <i class="bi bi-twitter"></i>
-        </a>
+
       </div>
 
       <!-- Copyright -->
