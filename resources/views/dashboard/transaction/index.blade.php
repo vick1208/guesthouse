@@ -32,19 +32,24 @@
                         <td>{{ $tran->pay_status }}</td>
                         <td>
                             <a href="/dashboard/transaction/{{ $tran->id }}/edit" class="badge bg-warning"><span
-                                data-feather="edit"></span></a>
+                                    data-feather="edit"></span></a>
 
-                                <form action="/dashboard/transaction/{{ $tran->id }}" method="POST" class="d-inline">
-                                    @method('delete')
-                                    @csrf
-                                    <button class="badge bg-danger border-0"
-                                        onclick="return confirm('Apakah Anda Ingin Menghapus?')"><span
-                                            data-feather="x-octagon"></span></button>
-                                </form>
+                            <form action="/dashboard/transaction/{{ $tran->id }}" method="POST" class="d-inline">
+                                @method('delete')
+                                @csrf
+                                <button class="badge bg-danger border-0"
+                                    onclick="return confirm('Apakah Anda Ingin Menghapus?')"><span
+                                        data-feather="x-octagon"></span></button>
+                            </form>
                         </td>
                     </tr>
 
                 @empty
+                    <tr>
+                        <td colspan="15" class="text-center">
+                            There's no data in this table
+                        </td>
+                    </tr>
                 @endforelse
             </tbody>
         </table>
