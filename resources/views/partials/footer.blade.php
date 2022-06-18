@@ -3,11 +3,12 @@
 
     <footer class="text-center text-lg-start" style="background-color: #db6930;">
       <div class="container d-flex justify-content-center py-5">
-        <a href="https://www.facebook.com/pages/DStrawberry-Cafe-and-Guest-House-Malino/276599255748669" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;" target="_blank">
+        <a href="https://www.facebook.com/pages/DStrawberry-Cafe-and-Guest-House-Malino/276599255748669" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;" target="_blank"
+        rel="noreferrer noopener">
           <i class="bi bi-facebook"></i>
         </a>
 
-        <a href="https://instagram.com/dstrawberry_malino?igshid=YmMyMTA2M2Y=" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;" target="_blank">
+        <a href="https://instagram.com/dstrawberry_malino?igshid=YmMyMTA2M2Y=" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;" target="_blank" rel="noreferrer noopener">
           <i class="bi bi-instagram"></i>
         </a>
 
@@ -16,7 +17,7 @@
       <!-- Copyright -->
       <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
         &copy; 2022 Copyright:
-        <a class="text-white" href="https://uksw.edu/">UKSW</a>
+        <a class="text-white" href="https://uksw.edu/" target="_blank" rel="noreferrer noopener">UKSW</a>
       </div>
       <!-- Copyright -->
     </footer>
