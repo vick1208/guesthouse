@@ -7,8 +7,12 @@
 
     <h1 class="text-center fw-light">Guest House D'Strawberry</h1>
 
-    <p class="text-center">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat a ullam illum, et voluptatibus nostrum tempora ratione praesentium, adipisci officia aspernatur fugit maxime dolores accusantium nihil quidem blanditiis obcaecati ducimus sequi corporis quod vero qui ipsa. Qui, atque. Aperiam ratione ex ab ipsa, voluptates necessitatibus rem harum dolor accusantium cum recusandae iure, labore impedit unde eius minima fuga, cumque earum! Minus consectetur accusantium deserunt repellendus doloribus explicabo nisi! Alias voluptatem reiciendis nam vel veniam perspiciatis est nulla aperiam, eos similique illum, deserunt, placeat laborum animi deleniti reprehenderit? Eos, rerum nesciunt architecto laboriosam voluptate blanditiis cupiditate neque esse doloribus nulla magnam.
+    <p class="text-center fw-normal">
+    Berlokasi di Jalan Kr. Podo, Pattapang, Tinggimoncong,
+    Kabupaten Gowa,Sulawesi Selatan. <br>
+     Guest house D'Strawberry berlokasi dekat dengan objek wisata seperti Hutan Pinus Malino,
+    Air Terjun Takapala,dan Lembah Hijau Malino. <br>
+    <a href="http://goo.gl/maps/owRsSogHkPp1cQnA8"><i class="bi bi-geo-alt-fill"></i> Lokasi Google Maps</a>
     </p>
 
 @endsection
