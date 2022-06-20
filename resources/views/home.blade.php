@@ -12,7 +12,7 @@
     Kabupaten Gowa,Sulawesi Selatan. <br>
      Guest house D'Strawberry berlokasi dekat dengan objek wisata seperti Hutan Pinus Malino,
     Air Terjun Takapala,dan Lembah Hijau Malino. <br>
-    <a href="http://goo.gl/maps/owRsSogHkPp1cQnA8"><i class="bi bi-geo-alt-fill"></i> Lokasi Google Maps</a>
+    <a href="http://goo.gl/maps/owRsSogHkPp1cQnA8" target="_blank" rel="noreferrer noopener"><i class="bi bi-geo-alt-fill"></i> Lokasi Google Maps</a>
     </p>
 
 @endsection
