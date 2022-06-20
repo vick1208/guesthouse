@@ -16,11 +16,11 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             UserSeeder::class,
-            GuestSeeder::class,
-            TypeSeeder::class,
-            PaymentSeeder::class,
-            RoomStatusSeeder::class,
-            RoomSeeder::class
+            // GuestSeeder::class,
+            // TypeSeeder::class,
+            // PaymentSeeder::class,
+            // RoomStatusSeeder::class,
+            // RoomSeeder::class
 
         ]);
     }
