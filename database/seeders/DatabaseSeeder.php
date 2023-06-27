@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             TypeSeeder::class,
             PaymentSeeder::class,
             RoomStatusSeeder::class,
-            // RoomSeeder::class
+            RoomSeeder::class
 
         ]);
     }

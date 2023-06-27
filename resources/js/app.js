@@ -1,5 +1,7 @@
 require('./bootstrap');
 
+import './mychart';
+
 import Alpine from 'alpinejs'
 
 window.Alpine = Alpine
